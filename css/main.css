@@ -1,0 +1,9 @@
+html{
+	background: -webkit-radial-gradient(center, ellipse cover, #fff6d9 0%, #fcebb6 100%);
+	background-repeat:no-repeat;
+}
+body div{
+	height:100%;
+	width:2048px;
+	background:background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQ0lEQVQYV2NkgIKZM2f+T09PZ4Tx0WmcEugGoChENxWZT9BEmMlghYTcB1LDSIwisEJk32HTBBOj3I3opmN1IzYnAAAKVjALQymkXwAAAABJRU5ErkJggg==);
+}
