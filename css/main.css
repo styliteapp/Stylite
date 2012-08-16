@@ -1,9 +1,231 @@
-html{
-	background: -webkit-radial-gradient(center, ellipse cover, #fff6d9 0%, #fcebb6 100%);
+body{
+	margin:0;
+	padding:0;
+	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAZUlEQVQYV2MsO7DyPwMW8O8nL8OfX88Z2Hh5wLKMMIW/Pn+BC4IUMbF/RtEOVohNAqQKWTNjwea5/2HGY3MCTAxuNUwAl+koJiJbhe5mDBNxWY/V18imwTyF4WtsikCexWk1uqcAEZ9NnAa9K0sAAAAASUVORK5CYII=) repeat;
+	font-family:'BitstreamVera';
+	font-size:62.5%;
+}
+/******************
+
+	HEADER
+	
+******************/
+header{
+	//background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(132, 91, 66)),to(rgb(94, 65, 48)));
+	//background-image: -webkit-linear-gradient(top, rgb(132, 91, 66), rgb(94, 65, 48));
+	//background-image: linear-gradient(top, rgb(132, 91, 66), rgb(94, 65, 48));
+	background:url(../images/header-texture.jpg);
+	background-size:25px 59px;
+	border-bottom:2px solid rgba(56,39,28,1);
+	overflow:hidden;
+}
+h1{
+	display:block;
+	background-image:url(../images/logo-small.png);
+	background-repeat:no-repeat;
+	width:98.5px;
+	height:45px;
+	background-size:98.5px 45px;
+	float:left;
+	padding:0;
+	margin:.8% 0 0 1.1%;
+}
+header ul{
+	float:right;
+	list-style-type:none;
+	padding:0;
+	margin:0;
+}
+header ul li{
+	display:inline-block;
+	width:100px;
+	height:59px;
+}
+header ul li:not(.styleboard){
+	border-width:0 0 0 2px;
+	-webkit-border-image:url(../images/border-nav.jpg) 0 0 0 2 repeat;
+}
+header li a{
+	display:block;
+	font-size:1.3em;
+	color:rgba(252,235,182,1);
+	text-decoration:none;
+	text-align:center;
+	width:100%;
+	padding:35% 0 0 0;
+}
+header li a:not(.styleboard){
+	background-position:center 10px;
 	background-repeat:no-repeat;
 }
-body div{
-	height:100%;
-	width:2048px;
-	background:background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQ0lEQVQYV2NkgIKZM2f+T09PZ4Tx0WmcEugGoChENxWZT9BEmMlghYTcB1LDSIwisEJk32HTBBOj3I3opmN1IzYnAAAKVjALQymkXwAAAABJRU5ErkJggg==);
+header a.navCloset{
+	background-image:url(../images/iconHanger.png);
+	background-size:35px 18px;
+}
+header a.navHome{
+	background-image:url(../images/iconHome.png);
+	background-size:26.5px 18.5px;
+}
+header ul li.styleboard{
+	width:150px;
+	padding:2% 0 0 0;
+	margin:0 0 0 0;
+	height:44px;
+	vertical-align:top;
+	border-left:none;
+}
+li.styleboard a{
+	display:block;
+	font-family:'BitstreamVeraBold';
+	font-size:1.5em;
+	line-height:1;
+	text-align:center;
+	background-color:rgba(120,192,168,1);
+	color:white;
+	width:88.66667%;
+	padding:6% 0 3.5%;
+	-webkit-border-radius:4px;
+	-webkit-box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 1);
+	text-decoration:none;
+	text-transform:uppercase;
+	border-left:none;
+}
+/******************
+
+	SPLASH
+	
+******************/
+#splashScreen{
+	background: -webkit-radial-gradient(center, ellipse cover, rgba(255,240,191,1) 0%, rgba(252,215,101,1) 100%);
+	background-repeat:no-repeat;
+	height:672px;
+	position:relative;
+	z-index:1;
+}
+#splashScreen:before{
+	content: "";
+	position: absolute;
+	z-index: -1;
+	top:0;
+	bottom:0;
+	left:0;
+	right:0;
+	background-image:url(../images/groovepaper_texture.png);
+	background-size:25px 25px;
+}
+#splashLogo{
+	margin:24% 0 0 34.5%;
+}
+/******************
+
+	ACCOUNT
+	
+******************/
+.accountContent{
+	overflow:hidden;
+	padding:50px 0 0 0;
+}
+.infoContainer{
+	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAXklEQVQYV4WPMQ4AIQgEpaPj/7+ECjruuARDFD0qSXaHEfwdERlENG4DzOwZWgu5m9mAIAYpFkQ8QmewJjqVefrPsyVWjQRsjpVc31/wdjbpoKoev+3CVWFzzMJafAB8x13Ley2Y5wAAAABJRU5ErkJggg==)repeat;
+}
+#userInfo{
+	-webkit-border-radius: 0px 6px 6px 0px;
+	-webkit-box-shadow: inset -1px 2px 4px 0px rgba(0, 0, 0, .75);
+	float:left;
+	width:57.128906%;
+	height:505px;
+	overflow:scroll;
+}
+#userInfo h2{position:relative;}
+#userInfo h2 a{
+	display:block;
+	height:22.5px;
+	width:21px;
+	background-size:21px 22.5px;
+	background-image:url(../images/iconEdit.png);
+	background-repeat:no-repeat;
+	position:absolute;
+	right:7px;
+	top:3px;
+}
+#userNetworks{
+	-webkit-border-radius: 6px 0px 0px 6px;
+	-webkit-box-shadow: inset 1px 2px 4px 0px rgba(0, 0, 0, .75);
+	float:right;
+	width:35.15625%;
+	overflow:hidden;
+}
+.infoContainer h2{
+	display:inline-block;
+	width:300px;
+	padding:6px 0 6px 12px;
+	margin:15px 0;
+	font-size:1.4em;
+	color:white;
+	text-shadow: 1px 1px .5px rgba(0,0,0,.5);
+	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAcElEQVQYV2P8uNzgPwMB8PXXXwZGmMLf//4zsDIxgrWAJLjZmFHYYIWEFIF0ML5Zqv8fm0nIrgEZBLcalzNhtoEVfvrxl4GPA+ImZGcgsxkfz9f9T0gRyCCsViP7GmYbWCG24AA5A6YIwzPYTIJ5EgABgmOUxh/HXQAAAABJRU5ErkJggg==)repeat;
+}
+.infoContainer dl{
+	width:100%;
+	overflow:hidden;
+	font-size:1.6em;
+	color:rgba(94,65,47,1);
+	margin:0;
+	padding:6px 0 0 0;		/***TOGGLE 0[saved] 6[edit] ON SWITCH***/
+}
+.infoContainer dt{
+	//background-color:blue;
+	padding:0 0 0 12px;
+	font-family:'BitstreamVeraBold';
+	text-align:right;
+}
+#userInfo dt{width:24.916667%;}
+#userNetworks dt{width:36.11111%;}
+#userNetworks dd a{
+	color:rgba(94,65,47,1);
+	text-decoration:none;
+	border-bottom:1px solid rgba(94,65,47,1);
+}
+#userInfo dd.aboutMe{line-height:1.5;}
+.infoContainer dd{
+	margin-left:20px;
+	//background-color:red;
+}
+#userInfo dd{width:67%;}
+.infoContainer dt, .infoContainer dd{
+	float:left;
+	margin-bottom:30px;
+}
+#userNetworks h2{float:right;}
+.infoContainer input, .infoContainer textarea{
+	width:97%;
+	margin-top:-6px;
+	font-family:'BitstreamVera';
+	font-size:1em;
+	color:rgba(94,65,47,1);
+	border:1px solid rgba(94,65,47,1);
+}
+.infoContainer textarea{
+	width:100%;
+	
+}
+button{
+	font-family:'BitstreamVeraBold';
+	font-size:1.8em;
+	color:white;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(120,192,168)),to(rgb(96,154,134)));
+	background-image: -webkit-linear-gradient(top, rgb(120,192,168), rgb(96,154,134));
+	background-image: linear-gradient(top, rgb(120,192,168), rgb(96,154,134));
+	border:none;
+	-webkit-border-radius:4px;
+	padding:12px 16px 10px;
+	margin:-12px 20px 30px 30.35%;
+	float:left;
+}
+.infoContainer dl > a{
+	display:inline-block;
+	text-decoration:none;
+	color:rgba(240,168,48,1);
+	border-bottom:1px solid rgba(240,168,48,1);
+	padding:5px 0 0 0;
 }
