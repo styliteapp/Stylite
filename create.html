@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>Stylite - Create</title>
+	<meta charset="utf-8">
+	
+	<!-- Mobile viewport optimization h5bp.com/ad -->
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/fontArimo.css" />
+	<link rel="stylesheet" href="css/fontLatinModernSans.css" />
+	<link rel="stylesheet" href="css/fontBitstreamVera.css" />
+	<link rel="stylesheet" href="css/main.css" />
+	
+	<!-- JS -->
+	<script src="http://code.jquery.com/jquery-1.8.0.min.js"></script>
+</head>
+<body>
+	<header>
+		<h1></h1>
+		<a href="" class="help" style="float:right;"></a>
+		<ul>
+			<li><a href="#" class="navHome">home</a></li>
+			<li><a href="#" class="navCloset">my closet</a></li>
+			<li><a href="#" class="navAccount">home</a></li>
+		</ul>
+	</header>
+	<div id="createContent">
+		<canvas></canvas>
+		<p class="boardInstruction">
+			Drag up to 8 images<br />onto your board<br /><br />
+			Move, resize, and rotate<br />them however you want
+		</p>
+		<section class="controlPanel">
+			<div class="actionBar">
+				<a href="" class="actionSave">save</a>
+				<a href="" class="actionClear">clear</a>
+				<a href="" class="actionShare">share</a>
+			</div>
+			<div class="boardCreation">
+				<p class="styleboardError"></p>
+				<label for="styleboardTitle">Styleboard Title</label>
+				<input id="styleboardTitle" type="text" name="styleboardTitle">
+				<button type="button" id="newItem">NEW<br />ITEM</button>
+				<p class="divider">or</p>
+				<span>Drag photos from your closet</span>
+				<div class="miniCloset">
+					<div data-orientation="portrait" style="background-image:url(images/sm-closetDress01.jpg);"></div>
+					<div data-orientation="landscape" style="background-image:url(images/sm-closetJewelry.jpg);"></div>
+				</div>
+			</div>
+		</section>
+		<section class="newItemPanel">
+			<div class="stepOne">
+				<div class="heading">
+					<span>upload a picture of your item</span>
+				</div>
+				<p>tip: when taking a new picture, try to place your item against a solid background to achieve more contrast!</p>
+				<div class="imgHolder">
+					<img src="images/md-closetShirt01.jpg" height="105" width="70" />
+				</div>
+			</div>
+			<div class="stepTwo">
+				<div class="heading">
+					<span>tell us about it</span>
+				</div>
+				<div class="col1">
+					<select name="article" id="itemArticle">
+						<option value="" selected="selected">what is it?</option>
+						<option value="01">shirt</option>
+						<option value="02">shorts</option>
+						<option value="03">pants</option>
+						<option value="04">shoes</option>
+						<option value="05">hat/headwear</option>
+						<option value="06">earrings</option>
+						<option value="07">necklace</option>
+						<option value="08">bracelet</option>
+						<option value="09">ring</option>
+						<option value="10">tie</option>
+						<option value="11">socks</option>
+						<option value="12">swimsuit</option>
+						<option value="13">jacket</option>
+						<option value="14">sweater</option>
+					</select>
+					<input type="text" name="brand" placeholder="what brand is it?">
+					<input type="text" name="store" placeholder="where'd you buy it?">
+				</div>
+				<div class="col2">
+					<select name="color" id="itemArticle">
+						<option value="" selected="selected">what color is it?</option>
+						<option value="01">red</option>
+						<option value="02">white</option>
+						<option value="03">blue</option>
+						<option value="04">yellow</option>
+						<option value="05">purple</option>
+						<option value="06">green</option>
+						<option value="07">orange</option>
+						<option value="08">brown</option>
+						<option value="09">black</option>
+						<option value="10">teal</option>
+						<option value="11">tan</option>
+						<option value="12">gray</option>
+						<option value="13">navy</option>
+					</select>
+					<a href="">add another color</a>
+				</div>
+			</div>
+			<div class="stepThree">
+				<div class="heading">
+					<span>save your item or cancel</span>
+				</div>
+				<p class="newItemError hide">There was a problem saving your image. Make sure you've filled out all of step 2!</p>
+				<a href="">cancel</a>
+				<button type="button">SAVE<br />ITEM</button>
+			</div>
+		</section>
+	</div>
+	<div class="helpStyleboard hide"></div>
+<script src="js/script.js"></script>
+</body>
+</html>
