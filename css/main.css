@@ -16,6 +16,16 @@ body{
 	font-family:'BitstreamVera';
 	font-size:62.5%;
 }
+.mask{
+	position:absolute;
+	z-index:4;
+	top:0;
+	left:0;
+	display:none;
+	width:1024px;
+	height:768px;
+	background-color:rgba(0,0,0,.25);
+}
 /******************
 
 HEADER
@@ -141,6 +151,359 @@ SPLASH
 }
 /******************
 
+HOME
+	
+******************/
+#homeContent{
+	overflow:hidden;
+	position:relative;
+}
+#homeContent div.utilityBar{
+	width:44.5%;
+	height:37px;
+	padding:10px 0 0 56%;
+	background:url(../images/home-utilityBar.png)no-repeat center right;
+	background-size:505px 47px;
+}
+.utilityBar select, .utilityBar input{
+	background-color:white;
+	color:rgba(94,65,47,1);
+	font-family:'BitstreamVera';
+	font-size:1.3em;
+	width:200px;
+	float:left;
+}
+.utilityBar input{
+	width:188px;
+	padding:3.8px 6px 3.8px 0;
+	margin:2.5px 0 0 15px;
+	border:1px solid rgba(94,65,47,.5);
+}
+.utilityBar button{
+	margin:2px 0 0 -4px;
+	padding:0;
+	width:30px;
+	height:23px;
+	background-color:rgba(94,65,47,1);
+	background-image:url(../images/iconMagGlass.png);
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:11px 12px;
+	border:none;
+	-webkit-border-radius: 0px 4px 4px 0px;
+}
+section.feed{
+	overflow:hidden;
+	padding:35px 0 0 12.5px;
+}
+.feed .module > a{text-decoration:none;}
+.feed div.module{
+	width:200px;
+	-webkit-box-shadow: 0px 0px 3px 1px rgba(0,0,0,.25);
+	float:left;
+	margin:0 25px 35px;
+}
+.module h2{
+	font-size:1.6em;
+	text-shadow: .5px .5px 1.5px rgba(94,65,47,1);
+	padding:8px 5%;
+	margin:0;
+	width:90%;
+	border-bottom:1px solid rgba(252,235,182,1);
+	color:rgba(252,235,182,1);
+	background-color:rgba(240,120,23,1);
+}
+.module p{
+	margin:-2px 0 0 0;
+	padding:5px 5% 5px 0;
+	width:95%;
+	font-size:1em;
+	font-family:'BitstreamVeraItalic';
+	line-height:1;
+	text-align:right;
+	color:rgba(240,120,23,1);
+	background-color:rgba(252,235,182,1);
+}
+.instructionSidebar:after{
+	content:"";
+	position:absolute;
+	z-index:2;
+	right:-12.5px;
+	top:48%;
+	height:37px;
+	width:12.5px;
+	background-image:url(../images/iconTab-slider.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:12.5px 37px;
+}
+.instructionSidebar ul{
+	margin:36px 0 0 0;
+	width:80%;
+	padding:0 6% 0 14%;
+	color:white;
+	font-size:1.5em;
+}
+.instructionSidebar li{
+	line-height:1.5;
+	padding-bottom:14px;
+	text-shadow: 1px 1px 1px rgba(0,0,0,.35);
+}
+/*=================
+DETAIL
+=================*/
+section.detail{
+	position:absolute;
+	top:0;
+	right:-912.5px;
+	min-height:650px;
+	max-height:650px;
+	width:900px;
+	-webkit-transition: all .15s ease-in;
+	-webkit-box-shadow:-2px 5px 15px 0px rgba(0, 0, 0, 0);
+	z-index:10;
+}
+.detail:after{
+	content:"";
+	position:absolute;
+	z-index:2;
+	left:-12.5px;
+	top:47%;
+	-webkit-transform:rotate(180deg);
+	width:12.5px;
+	height:37px;
+	background:url(../images/iconTab-slider.png)no-repeat center center;
+	background-size:12.5px 37px;
+}
+.detail > *{float:left;}
+.detail div.infoWrapper{
+	min-height:650px;
+	max-height:650px;
+	min-width:250px;
+	max-width:250px;
+	overflow:scroll;
+}
+.detail div.detailTitle{
+	background-color:rgba(240,120,23,1);
+	color:rgba(252,235,182,1);
+	width:250px;
+}
+.detailTitle h3{
+	font-size:1.8em;
+	font-family:'BitstreamVeraBold';
+	margin:0;
+	padding:10px 4%;
+	width:92%;
+}
+.detailTitle p{
+	font-family:'BitstreamVeraItalic';
+	font-size:1.2em;
+	text-align:right;
+	padding:10px 4%;
+	width:92%;
+	margin:0;
+}
+.detail div.detailInfo{
+	width:250px;
+}
+.detailInfo ul{
+	list-style:none;
+	padding:0;
+	margin:0;
+	width:250px;
+}
+.detailInfo > ul li{
+	min-height:79.5px;
+	//max-height:79.5px;
+	width:100%;
+	padding-top:8px;
+	color:rgba(94,65,47,1);
+	font-size:1.2em;
+}
+.detailInfo > ul li:nth-of-type(odd){
+	background-color:rgba(214,199,154,1);
+}
+.detailInfo > ul li:nth-of-type(even){
+	background-color:rgba(252,235,182,1);
+}
+.detailInfo > ul li h4{
+	color:white;
+	background-color:rgba(94,65,47,1);
+	font-family:'BitstreamVeraBold';
+	font-size:1em;
+	margin:0;
+	padding:3px 4%;
+	width:52%;
+}
+.detailInfo dl{
+	padding:3px 0 0 0;
+	margin:0;
+	font-size:1em;
+	overflow:hidden;
+}
+.detailInfo dl *{
+	float:left;
+}
+.detailInfo dt{
+	display:block;
+	padding:2px 2.5% 2px 4%;
+	width:21.5%;
+	text-align:right;
+}
+.detailInfo dd{
+	display:block;
+	width:68%;
+	margin:0;
+	padding:2px 4% 2px 0;
+}
+/*=================
+AUTHENTICATION
+=================*/
+#authPanel{
+	position:absolute;
+	z-index:5;
+	top:80px;
+	left:-285px;
+	-webkit-transition: all .15s ease-in;
+	min-height:300px;
+	width:285px;
+	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAXklEQVQYV4WPMQ4AIQgEpaPj/7+ECjruuARDFD0qSXaHEfwdERlENG4DzOwZWgu5m9mAIAYpFkQ8QmewJjqVefrPsyVWjQRsjpVc31/wdjbpoKoev+3CVWFzzMJafAB8x13Ley2Y5wAAAABJRU5ErkJggg==)repeat;
+	background-size:5px 5px;
+	-webkit-border-radius:7px;
+}
+#authPanel ul{list-style:none;padding:0;margin:0;width:100%;overflow:hidden;}
+#authPanel ul li{float:left;width:50%;text-align:center;}
+#authPanel ul li a{
+	text-decoration:none;
+	font-size:2em;
+	color:rgba(94,65,47,1);
+	display:block;
+	padding:10px 0;
+}
+#authPanel a.tabJoin{
+	width:101%;
+	-webkit-border-radius:0px 7px 0px 0px;
+}
+#authPanel a.tabLogin{
+	width:101%;
+	-webkit-border-radius:7px 0px 0px 0px;
+}
+.inactiveTab{
+	background-color:rgba(0,0,0,.1);
+	-webkit-box-shadow: inset 1px -1px 5px 0px rgba(0, 0, 0, .5);
+}
+#authPanel .panelLogin, #authPanel .panelJoin{
+	width:90%;
+	padding:12px 5%;
+}
+.panelJoin p.inputPrompt{
+	color:rgba(94,65,47,1);
+	font-size:1.2em;
+	margin:0;
+	padding:0 0 12px 0;
+}
+.panelLogin p.errorLogin, .panelJoin p.errorJoin{
+	color:rgba(200,0,0,1);
+	font-size:1.2em;
+	margin:0;
+	padding:0 0 12px 0;
+}
+.panelLogin input{
+	width:82%;
+	padding:6px 3% 6px 15%;
+	font-size:1.4em;
+	margin:0 0 10px 0;
+	background-repeat:no-repeat;
+	background-size:20.5px 20.5px;
+	background-position: 9px 5px;
+	font-family:'BitstreamVera';
+}
+.panelJoin input{
+	font-family:'BitstreamVera';
+	width:94%;
+	padding:6px 3%;
+	font-size:1.4em;
+	margin:0 0 10px 0;
+	border:1px solid rgba(94,65,47,.5);
+	-webkit-box-shadow:none;
+}
+.panelLogin input[type=email]{
+	background-image:url(../images/iconEnvelope.jpg);
+	border:1px solid rgba(94,65,47,.5);
+	color:rgba(94,65,47,1);
+}
+.panelLogin input[type=password]{
+	background-image:url(../images/iconLock.jpg);
+	border:1px solid rgba(94,65,47,.5);
+	color:rgba(94,65,47,1);
+}
+.panelLogin > a{
+	font-size:1.2em;
+	color:rgba(120,192,168,1);
+	text-decoration:none;
+}
+#authPanel button{
+	width:100%;
+	color:white;
+	font-size:3.4em;
+	font-family:'BitstreamVeraBold';
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(120,192,168)),to(rgb(96,154,134)));
+	background-image: -webkit-linear-gradient(top, rgb(120,192,168), rgb(96,154,134));
+	background-image: linear-gradient(top, rgb(120,192,168), rgb(96,154,134));
+	-webkit-border-radius:5px;
+	padding:6px 0;
+	margin:28px 0 10px;
+	border:none;
+}
+#authPanel div.altAuth{
+	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAXklEQVQYV4WPMQ4AIQgEpaPj/7+ECjruuARDFD0qSXaHEfwdERlENG4DzOwZWgu5m9mAIAYpFkQ8QmewJjqVefrPsyVWjQRsjpVc31/wdjbpoKoev+3CVWFzzMJafAB8x13Ley2Y5wAAAABJRU5ErkJggg==)repeat;
+	-webkit-border-radius:0px 0px 7px 7px;
+	overflow:hidden;
+}
+.altAuth p.divider{
+	color:rgba(94,65,47,1);
+	position:relative;
+	text-align:center;
+	font-size:1.2em;
+}
+.divider:before{
+	content:"";
+	display:block;
+	height:1px;
+	width:42%;
+	position:absolute;
+	left:0;
+	top:6.5px;
+	border-top:1px solid rgba(94,65,47,1);
+}
+.divider:after{
+	content:"";
+	display:block;
+	height:1px;
+	width:42%;
+	position:absolute;
+	right:0;
+	top:6.5px;
+	border-top:1px solid rgba(94,65,47,1);
+}
+.altAuth > a{
+	float:left;
+	display:block;
+	height:55px;
+	width:55px;
+	margin:-4px 0 12px 14px;
+	background-position:center center;
+	background-repeat:no-repeat;
+	background-size:55px 55px;
+}
+.altAuth a.facebookLogin{
+	background-image:url(../images/iconFacebook.jpg);
+}
+.altAuth a.twitterLogin{
+	background-image:url(../images/iconTwitter.jpg);
+}
+/******************
+
 ACCOUNT
 	
 ******************/
@@ -210,9 +573,7 @@ ACCOUNT
 	border-bottom:1px solid rgba(94,65,47,1);
 }
 #userInfo dd.aboutMe{line-height:1.5;}
-.infoContainer dd{
-	margin-left:20px;
-	//background-color:red;
+.infoContainer dd{margin-left:20px;
 }
 #userInfo dd{width:67%;}
 .infoContainer dt, .infoContainer dd{
@@ -228,11 +589,8 @@ ACCOUNT
 	color:rgba(94,65,47,1);
 	border:1px solid rgba(94,65,47,1);
 }
-.infoContainer textarea{
-	width:100%;
-	
-}
-button{
+.infoContainer textarea{width:100%;}
+button:not(.utilityBar button){
 	font-family:'BitstreamVeraBold';
 	font-size:1.8em;
 	color:white;
@@ -382,11 +740,9 @@ div.boardCreation{
 	margin:0 0 16px 0;
 	font-size:1.3em;
 	text-align:center;
-	//border-top:1px solid rgba(94,65,47,1);
-	//border-bottom:1px solid rgba(94,65,47,1);
 	position:relative;
 }
-.divider:before{
+.boardCreation .divider:before{
 	content:"";
 	display:block;
 	height:1px;
@@ -396,7 +752,7 @@ div.boardCreation{
 	top:6.5px;
 	border-top:1px solid rgba(94,65,47,1);
 }
-.divider:after{
+.boardCreation .divider:after{
 	content:"";
 	display:block;
 	height:1px;
@@ -435,22 +791,21 @@ div.boardCreation{
 }
 .miniCloset div[data-orientation=landscape]{background-size:74px 49.5px;}
 .miniCloset div[data-orientation=portrait]{background-size:49.5px 74px;}
-section.newItemPanel{
+section.newItemPanel, section.instructionSidebar{
 	position:absolute;
 	top:0;
 	left:-341.5px;
 	width:341.5px;
 	-webkit-transition: all .15s ease-in;
-	//-webkit-box-shadow: 2px 5px 15px 0px rgba(0, 0, 0, .5);
 	-webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, .5);
 }
-.newItemPanel > div{
+.newItemPanel > div, .instructionSidebar > div{
 	min-height:236px;
 	max-height:236px;
 	background-size:5px 5px;
 	position:relative;
 }
-.newItemPanel div.heading{
+.newItemPanel div.heading, .instructionSidebar div.heading{
 	min-height:62.5px;
 	max-height:62.5px;
 	background-size:5px 5px;
@@ -462,10 +817,11 @@ section.newItemPanel{
 	font-size:1.5em;
 	color:white;
 	position:absolute;
-	bottom:9px;
+	bottom:8.5px;
 	left:50px;
 }
-.newItemPanel div.heading:before{
+.instructionSidebar .heading span{font-size:2.4em;}
+div.heading:before{
 	background-size:26.5px 38px;
 }
 .stepOne .heading{

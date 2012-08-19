@@ -4,6 +4,79 @@ $(document).ready(function(){
 /****************************
 *****************************
 *****************************
+***********HOME**************
+*****************************
+*****************************
+****************************/
+	$(".instructionSidebar").toggle(
+		function(){
+			$("section.instructionSidebar").css({
+				"left":"0",
+				"-webkit-box-shadow":"2px 5px 15px 0px rgba(0, 0, 0, .5)"
+		})},
+		function(){
+			$("section.instructionSidebar").css({
+				"left":"-341.5px",
+				"-webkit-box-shadow":"0px 0px 0px 0px rgba(0, 0, 0, .5)"
+		})
+	});
+	$("div.module > a").click(function(){
+		$("section.detail").css({
+			"right":"0",
+			"-webkit-box-shadow":"-2px 5px 15px 0px rgba(0, 0, 0, .5)"
+		});
+		return false;
+	});
+	$("section.feed").click(function(){
+		$("section.detail").css({
+			"right":"-912.5px",
+			"-webkit-box-shadow":"-2px 5px 15px 0px rgba(0, 0, 0, 0)"
+		});
+	});
+	$("header ul li a").click(function(){
+		$(".mask").show();
+		$("#authPanel").css({
+			"left":"360px"
+		});
+		return false;
+	});
+	$(".mask").click(function(){
+		$(this).hide();
+		$("#authPanel").css({
+			"left":"-285px"
+		}).find("input").val("");
+	});
+	$(".panelLogin button").click(function(){
+		if($(".panelLogin input").val()!=""){
+			$("#authPanel").css({
+				"left":"1024px"
+			}).find(".errorLogin").html("");
+			$(".mask").hide();
+		}else{
+			$(".errorLogin").html("Please sign in with your email and password");
+		}
+	});
+	$(".panelJoin button").click(function(){
+		if($(".panelJoin input").val()!=""){
+			$("#authPanel").css({
+				"left":"1024px"
+			}).find(".errorJoin").html("");
+			$(".mask").hide();
+		}else{
+			$(".errorJoin").html("Please register by filling in all of the information.");
+		}
+	});
+	$("#authPanel > ul li a").click(function(){
+		var opts = $(this).attr("data-tab");
+		$("#authPanel > div:not(.altAuth)").hide();
+		$("#authPanel > div."+opts).show();
+		$("#authPanel > ul li a").addClass("inactiveTab");
+		$(this).removeClass("inactiveTab");
+		return false;
+	});
+/****************************
+*****************************
+*****************************
 ********ACCOUNT**************
 *****************************
 *****************************
