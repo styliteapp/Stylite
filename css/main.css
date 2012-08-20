@@ -612,6 +612,57 @@ button:not(.utilityBar button){
 }
 /******************
 
+MY CLOSET
+	
+******************/
+#closetContent section.newItemPanel{
+	width:341.5px;
+	float:left;
+}
+#closetContent .stepOne .imgHolder{
+	//border:6px dashed rgba(252,235,182,1);
+	display:block;
+	width:105px;
+	height:105px;
+	background:url(../images/iconCameraUpload-sm.png)no-repeat center center;
+	background-size:48.5px 35px;
+}
+#closetContent .stepOne .imgHolder a{
+	display:block;
+	width:100%;
+	height:100%;
+}
+#closetContent .stepThree button{
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgb(120,192,168)),to(rgb(96,154,134)));
+	background-image: -webkit-linear-gradient(top, rgb(120,192,168), rgb(96,154,134));
+	background-image: linear-gradient(top, rgb(120,192,168), rgb(96,154,134));
+	border:none;
+	font-family:'BitstreamVeraBold';
+	font-size:1.8em;
+	color:white;
+	left:102px;
+}
+#closetContent section.closet{
+	min-height:708px;
+	max-height:708px;
+	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAXklEQVQYV4WPMQ4AIQgEpaPj/7+ECjruuARDFD0qSXaHEfwdERlENG4DzOwZWgu5m9mAIAYpFkQ8QmewJjqVefrPsyVWjQRsjpVc31/wdjbpoKoev+3CVWFzzMJafAB8x13Ley2Y5wAAAABJRU5ErkJggg==)repeat;
+	background-size:5px 5px;
+	overflow:scroll;
+}
+.closet > div{
+	float:left;
+	display:block;
+	min-width:203.5px;
+	min-height:203.5px;
+	max-width:203.5px;
+	max-height:203.5px;
+	padding:12px;
+	text-align:center;
+	vertical-align:middle;
+}
+
+/******************
+
 CREATE
 STYLEBOARD
 	
@@ -791,7 +842,7 @@ div.boardCreation{
 }
 .miniCloset div[data-orientation=landscape]{background-size:74px 49.5px;}
 .miniCloset div[data-orientation=portrait]{background-size:49.5px 74px;}
-section.newItemPanel, section.instructionSidebar{
+#createContent section.newItemPanel, section.instructionSidebar{
 	position:absolute;
 	top:0;
 	left:-341.5px;
