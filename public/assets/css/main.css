@@ -1,0 +1,189 @@
+/*
+	STYLITE COLORS
+	teal:		(120,192,168,1)
+	dk teal:	(96,154,134,1)
+	yellow:		(240,168,48,1)
+	tan:		(252,235,182,1)
+	dk tan:		(215,200,155,1)
+	orange:		(240,120,23,1)
+	brown:		(94,65,47,1)
+
+	BOOMSNAP COLORS
+	lt blue:	(0,201,201,1)
+	aqua:		(0,125,128,1)
+	brt red:	(250,57,0,1)
+	salmon:		(255,111,67,1)
+	navy:		(36,45,61,1)
+
+	FONTS--
+	Apertura:	.tk-apertura
+*/
+body{
+	margin:0;
+	padding:0;
+	font-family:'Helvetica', 'Arial', sans-serif;
+	font-weight:normal;
+	font-size:62.5%;
+	background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAKElEQVQIW2NkQAOfPn36z4gsBhLg4+NjhAvCBECKwILIAmBBdAGQIAAKlRPbFsWNYgAAAABJRU5ErkJggg==)repeat;
+}
+#container{
+	background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAABCAYAAADn9T9+AAAAEElEQVQIW2MsLy//z0AEAABbkAJmo+X7SgAAAABJRU5ErkJggg==);
+	background-repeat:repeat-x;
+	background-position:0 85px;
+}
+#wrapper{
+	max-width:960px;
+	margin:0 auto;
+	//background-color:rgba(255,0,0,.25);
+}
+header{overflow:hidden;}
+h1{
+	display:block;
+	float:left;
+	width:175px;
+	height:46px;
+	background:url(../images/Boomsnap_logo.png)no-repeat center center;
+	margin:0;
+	padding:20px 0 20px;
+}
+nav{
+	float:left;
+	width:60%;
+	margin:62px 0 0 10%;
+}
+nav ul{
+	list-style:none;
+	padding:0;margin:0;
+	text-align:center;
+	overflow:hidden;
+}
+nav li{
+	float:left;
+	width:33.33333%;
+}
+nav a{
+	display:inline-block;
+	padding:3px 0 20px;
+	text-decoration:none;
+	color:rgba(0,0,0,.35);
+	font-size:1.2em;
+}
+nav a:hover{color:rgba(0,125,128,1);}
+nav a.active{background:url(../images/activeTab.png)no-repeat center 23px;color:#777;}
+#main-content{
+	margin:25px 0 0;
+}
+#main-content h2{color:rgba(36,45,61,1);font-size:3.6em;margin:0 0 20px;}
+article{
+	overflow:hidden;
+}
+article p{
+	font-size:1.2em;
+	line-height:2;
+	color:#777;
+}
+/*==================
+====================
+====== TIMER =======
+====================
+==================*/
+.hasCountdown {color:rgba(255,111,67,1);line-height:3em;min-height:80px;margin:0 0 30px;}
+.countdown_rtl {direction: rtl;}
+.countdown_holding span {color: white;}
+.countdown_row {
+	clear: both;
+	width: 100%;
+	padding: 0px 2px;
+	text-align: center;
+}
+.countdown_show1 .countdown_section {width: 98%;}
+.countdown_show2 .countdown_section {width: 48%;}
+.countdown_show3 .countdown_section {width: 32.5%;}
+.countdown_show4 .countdown_section {width: 24.5%;}
+.countdown_show5 .countdown_section {width: 19.5%;}
+.countdown_show6 .countdown_section {width: 16.25%;}
+.countdown_show7 .countdown_section {width: 14%;}
+.countdown_section {
+	display: block;
+	padding:12px 0 0;
+	float: left;
+	font-size: 2.4em;
+	text-align: center;
+}
+.countdown_amount {font-size: 200%;}
+.countdown_descr {
+	display: block;
+	width: 100%;
+}
+#launch .fs3b-map{
+	float:left;
+	margin:0 4% 4px 4px;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .35);
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .35);
+}
+#launch p{float:left;width:56%;}
+#launch p:last-child{
+	//padding:2%;
+	width:54%;
+	margin:18px 0 0;
+	//background-color:rgba(255,111,67,1);
+}
+#launch input{
+	width: 96%;
+	font-size: 1.8em;
+	padding: 2% 1% 2% 3%;
+	border-radius: 26px 0 0 26px;
+	-webkit-border-radius:26px 0 0 26px;
+	border: 1px solid rgba(0,201,201,1);
+}
+#launch input:focus{
+	background-color:rgba(0,201,201,1);
+	border:none;
+	outline:0;
+}
+#architects > div{
+	float:left;
+	width:100%;
+	margin:0 0 30px 0;
+}
+#architects h3{
+	color:white;
+	font-size:2em;
+	background-color:rgba(36,45,61,.5);
+	width:200px;
+	text-align:center;
+	padding:5px 0;
+	margin:0;
+	position:absolute;
+}
+#architects img{
+	float:left;
+	margin:0 0 20px 0;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .35);
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .35);
+}
+#architects p{
+	float:left;
+	width:65%;
+	margin:0;padding:0 4% 0 4%;
+}
+#architects p.social{
+	overflow:hidden;
+	padding-top:6px;
+}
+#architects .social a{
+	float: left;
+	display: block;
+	margin-right:8%;
+	padding:0 0 0 4%;
+	height:14px;
+	background-repeat:no-repeat;
+	background-position:left 0px;
+	color: #777;
+	line-height:1.3;
+	text-decoration: none;
+}
+#architects .social a:hover{color:rgba(0,125,128,1);background-position:left -14px;}
+#architects .social .fb{background-image:url(../images/bioFacebookIcon.png);}
+#architects .social .twitter{background-image:url(../images/bioTwitterIcon.png);}
+#architects .social .email{background-image:url(../images/bioEmailIcon.png);}
