@@ -42,7 +42,7 @@ h1{
 	float:left;
 	width:175px;
 	height:46px;
-	background:url(../images/Boomsnap_logo.png)no-repeat center center;
+	background:url(../img/Boomsnap_logo.png)no-repeat center center;
 	margin:0;
 	padding:20px 0 20px;
 }
@@ -69,7 +69,7 @@ nav a{
 	font-size:1.2em;
 }
 nav a:hover{color:rgba(0,125,128,1);}
-nav a.active{background:url(../images/activeTab.png)no-repeat center 23px;color:#777;}
+nav a.active{background:url(../img/activeTab.png)no-repeat center 23px;color:#777;}
 #main-content{
 	margin:25px 0 0;
 }
@@ -184,6 +184,6 @@ article p{
 	text-decoration: none;
 }
 #architects .social a:hover{color:rgba(0,125,128,1);background-position:left -14px;}
-#architects .social .fb{background-image:url(../images/bioFacebookIcon.png);}
-#architects .social .twitter{background-image:url(../images/bioTwitterIcon.png);}
-#architects .social .email{background-image:url(../images/bioEmailIcon.png);}
+#architects .social .fb{background-image:url(../img/bioFacebookIcon.png);}
+#architects .social .twitter{background-image:url(../img/bioTwitterIcon.png);}
+#architects .social .email{background-image:url(../img/bioEmailIcon.png);}
