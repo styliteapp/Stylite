@@ -123,22 +123,38 @@ article p{
 }
 #launch p{float:left;width:56%;}
 #launch p:last-child{
-	//padding:2%;
 	width:54%;
-	margin:18px 0 0;
-	//background-color:rgba(255,111,67,1);
+	margin:20px 0 0;
 }
-#launch input{
-	width: 96%;
+#launch input[type=email]{
+	width: 70%;
 	font-size: 1.8em;
 	padding: 2% 1% 2% 3%;
+	margin:0 -.5% 0 0;
 	border-radius: 26px 0 0 26px;
 	-webkit-border-radius:26px 0 0 26px;
-	border: 1px solid rgba(0,201,201,1);
+	border-top: 1px solid rgba(0,201,201,1);
+	border-left: 1px solid rgba(0,201,201,1);
+	border-bottom: 1px solid rgba(0,201,201,1);
+	border-right:none;
 }
-#launch input:focus{
+#launch input[type=button]{
+	font-size: 1.8em;
+	line-height: 1;
+	border-left: none;
+	border-top: 1px solid rgba(0, 201, 201, 1);
+	border-right: 1px solid rgba(0, 201, 201, 1);
+	border-bottom: 1px solid rgba(0, 201, 201, 1);
+	color: rgba(0, 201, 201, 1);
+	background-color: rgba(36, 45, 61, 1);
+	margin: 0;
+	cursor: pointer;
+	-webkit-border-radius:0 25px 25px 0;
+	border-radius: 0 25px 25px 0;
+	padding: 2.4% 3%;
+}
+#launch input[type=email]:focus{
 	background-color:rgba(0,201,201,1);
-	border:none;
 	outline:0;
 }
 #architects > div{
