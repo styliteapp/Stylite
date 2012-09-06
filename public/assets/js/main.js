@@ -20,6 +20,7 @@ $(document).ready(function(){
 			$.ajax({
 				url		:	Stylite.url('api/signup'),
 				type	:	'POST',
+				dataType:	'json',
 				data	:	{
 					email	:	eAddress
 				},
