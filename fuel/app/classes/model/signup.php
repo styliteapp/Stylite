@@ -17,5 +17,24 @@ class Model_Signup extends \Orm\Model {
 			'property' => 'created_at',
 		),
 	);
+
+
+	public static function add_email($email)
+	{
+		$valid = filter_var($post->input, FILTER_VALIDATE_EMAIL);
+
+		if ($valid === false)
+		{
+			return false;
+		}
+
+		$subscription = static::forge(array(
+			'email' => $email,
+		));
+
+		$subscription->save();
+
+		return $subscription;
+	}
 	
 }

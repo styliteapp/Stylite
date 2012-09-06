@@ -8,11 +8,16 @@ class Controller_Api extends Controller_Rest
 			'email' => Input::post('email'),
 		);
 
-		$subscription = Model_Signup::forge(array(
-			'email' => $post->email,
-		));
+		$subscribed = Model_Signup::add_email($post->email);
 
-		$subscription->save();
+		if (! $subscribed)
+		{
+			$this->response(array(
+				'success' => false,
+				'message' => 'invalid_email',
+			));
+			return;
+		}
 
 		$this->response(array(
 			'success' => true,
