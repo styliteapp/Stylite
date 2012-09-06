@@ -9,7 +9,7 @@
  * @package  app
  * @extends  Controller
  */
-class Controller_Home extends Controller
+class Controller_Home extends Controller_Base
 {
 
 	/**
@@ -20,29 +20,7 @@ class Controller_Home extends Controller
 	 */
 	public function action_index()
 	{
-		return Response::forge(View::forge('index'));
+		$this->template->content = View::forge('home/index');
 	}
 
-	/**
-	 * A typical "Hello, Bob!" type example.  This uses a ViewModel to
-	 * show how to use them.
-	 * 
-	 * @access  public
-	 * @return  Response
-	 */
-	public function action_hello()
-	{
-		return Response::forge(ViewModel::forge('hello'));
-	}
-
-	/**
-	 * The 404 action for the application.
-	 * 
-	 * @access  public
-	 * @return  Response
-	 */
-	public function action_404()
-	{
-		return Response::forge(ViewModel::forge('404'), 404);
-	}
 }

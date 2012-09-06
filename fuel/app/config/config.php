@@ -210,7 +210,9 @@ return array(
 		 * );
 		 */
 		'packages'  => array(
-			//'orm',
+			'auth',
+			'casset',
+			'orm',
 		),
 
 		/**
