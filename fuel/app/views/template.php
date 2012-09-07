@@ -42,7 +42,7 @@
 
 <?= Asset::js('main.js') ?>
 <?= Asset::js('stylite.js') ?>
-<?= Casset::render_js() ?>
+<!--- <?= Casset::render_js() ?> --->
 
 </body>
 </html>
