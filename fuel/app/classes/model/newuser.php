@@ -22,18 +22,18 @@ class Model_Newuser extends \Orm\Model {
 	);
 
 
-	public static function add_user($signupObj)
+	public static function add_user($email, $password, $fName, $lName)
 	{
 		$creation = static::forge(array(
-			'email' 	=> $signupObj,
-			/*'password'	=> $signupObj->password,
-			'first_name'=> $signupObj->fName,
-			'last_name'	=> $signupObj->lName*/
+			'email' 	=> $email,
+			'password'	=> $password,
+			'first_name'=> $fName,
+			'last_name'	=> $lName
 		));
 
 		$creation->save();
 
-		return $creation;
+		//return $creation;
 	}
 	
 }
