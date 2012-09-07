@@ -1,4 +1,4 @@
- oppen <?php
+<?php
 /**
  * The production database settings.
  */
