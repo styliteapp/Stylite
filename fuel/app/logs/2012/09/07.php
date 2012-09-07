@@ -89,3 +89,18 @@ Error - 2012-09-07 19:25:56 --> 8 - Undefined variable: title in /Users/grantes/
 Error - 2012-09-07 19:25:56 --> 8 - Undefined variable: title in /Users/grantes/Sites/Stylite_app/fuel/app/views/404.php on line 45
 Error - 2012-09-07 19:25:56 --> 8 - Undefined variable: title in /Users/grantes/Sites/Stylite_app/fuel/app/views/404.php on line 5
 Error - 2012-09-07 19:25:56 --> 8 - Undefined variable: title in /Users/grantes/Sites/Stylite_app/fuel/app/views/404.php on line 45
+Error - 2012-09-07 19:48:46 --> 8 - Undefined variable: title in /Users/grantes/Sites/Stylite_app/fuel/app/views/404.php on line 5
+Error - 2012-09-07 19:48:46 --> 8 - Undefined variable: title in /Users/grantes/Sites/Stylite_app/fuel/app/views/404.php on line 45
+Error - 2012-09-07 19:50:34 --> 8 - Undefined variable: title in /Users/grantes/Sites/Stylite_app/fuel/app/views/404.php on line 5
+Error - 2012-09-07 19:50:34 --> 8 - Undefined variable: title in /Users/grantes/Sites/Stylite_app/fuel/app/views/404.php on line 45
+Error - 2012-09-07 19:50:34 --> 8 - Undefined variable: title in /Users/grantes/Sites/Stylite_app/fuel/app/views/404.php on line 5
+Error - 2012-09-07 19:50:34 --> 8 - Undefined variable: title in /Users/grantes/Sites/Stylite_app/fuel/app/views/404.php on line 45
+Error - 2012-09-07 19:50:34 --> 8 - Undefined variable: title in /Users/grantes/Sites/Stylite_app/fuel/app/views/404.php on line 5
+Error - 2012-09-07 19:50:34 --> 8 - Undefined variable: title in /Users/grantes/Sites/Stylite_app/fuel/app/views/404.php on line 45
+Error - 2012-09-07 19:52:59 --> Error - SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'first_name' cannot be null with query: "INSERT INTO `users` (`email`, `password`, `first_name`, `last_name`, `created_at`) VALUES ('grant.standridge@Gmail.com', 'asdfasdf1', null, null, 1347047579)" in /Users/grantes/Sites/Stylite_app/fuel/core/classes/database/pdo/connection.php on line 167
+Error - 2012-09-07 19:54:01 --> 8 - Undefined variable: title in /Users/grantes/Sites/Stylite_app/fuel/app/views/404.php on line 5
+Error - 2012-09-07 19:54:01 --> 8 - Undefined variable: title in /Users/grantes/Sites/Stylite_app/fuel/app/views/404.php on line 45
+Error - 2012-09-07 19:54:01 --> 8 - Undefined variable: title in /Users/grantes/Sites/Stylite_app/fuel/app/views/404.php on line 5
+Error - 2012-09-07 19:54:01 --> 8 - Undefined variable: title in /Users/grantes/Sites/Stylite_app/fuel/app/views/404.php on line 45
+Error - 2012-09-07 19:54:01 --> 8 - Undefined variable: title in /Users/grantes/Sites/Stylite_app/fuel/app/views/404.php on line 5
+Error - 2012-09-07 19:54:01 --> 8 - Undefined variable: title in /Users/grantes/Sites/Stylite_app/fuel/app/views/404.php on line 45
