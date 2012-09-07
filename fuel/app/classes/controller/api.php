@@ -25,9 +25,9 @@ class Controller_Api extends Controller_Rest
 		));
 	}
 
-	public function get_newuser()
+	public function post_newuser()
 	{
-		$signupObj = Input::get('signupObj');
+		$signupObj = Input::post('signupObj');
 		//print_r(Input::post('signupObj'));
 		$this->response(array(
 			'success'	=>	true,
