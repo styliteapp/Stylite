@@ -81,3 +81,5 @@ Error - 2012-09-07 19:05:14 --> 8 - Trying to get property of non-object in /Use
 Error - 2012-09-07 19:09:36 --> 8 - Undefined index: works in /Users/grantes/Sites/Stylite_app/fuel/core/classes/response.php on line 235
 Error - 2012-09-07 19:10:07 --> 8 - Undefined variable: post in /Users/grantes/Sites/Stylite_app/fuel/app/classes/model/signup.php on line 24
 Error - 2012-09-07 19:10:07 --> 8 - Trying to get property of non-object in /Users/grantes/Sites/Stylite_app/fuel/app/classes/model/signup.php on line 24
+Error - 2012-09-07 19:16:52 --> 8 - Undefined variable: title in /Users/grantes/Sites/Stylite_app/fuel/app/views/404.php on line 5
+Error - 2012-09-07 19:16:52 --> 8 - Undefined variable: title in /Users/grantes/Sites/Stylite_app/fuel/app/views/404.php on line 45
