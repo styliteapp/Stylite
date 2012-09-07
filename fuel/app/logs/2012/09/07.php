@@ -54,3 +54,5 @@ Error - 2012-09-07 16:30:53 --> 8 - Undefined variable: title in /Users/grantes/
 Error - 2012-09-07 16:30:53 --> 8 - Undefined variable: title in /Users/grantes/Sites/stylite_app/fuel/app/views/404.php on line 45
 Error - 2012-09-07 16:33:00 --> 8 - Undefined variable: post in /Users/grantes/Sites/stylite_app/fuel/app/classes/model/signup.php on line 24
 Error - 2012-09-07 16:33:00 --> 8 - Trying to get property of non-object in /Users/grantes/Sites/stylite_app/fuel/app/classes/model/signup.php on line 24
+Error - 2012-09-07 18:50:14 --> 8 - Undefined variable: post in /Users/grantes/Sites/Stylite_app/fuel/app/classes/model/signup.php on line 24
+Error - 2012-09-07 18:50:14 --> 8 - Trying to get property of non-object in /Users/grantes/Sites/Stylite_app/fuel/app/classes/model/signup.php on line 24
