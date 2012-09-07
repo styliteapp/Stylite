@@ -84,3 +84,9 @@ Error - 2012-09-06 21:16:56 --> 8 - Undefined variable: title in /Users/grantes/
 Error - 2012-09-06 21:16:56 --> 8 - Undefined variable: title in /Users/grantes/Sites/stylite_app/fuel/app/views/404.php on line 45
 Error - 2012-09-06 21:16:56 --> 8 - Undefined variable: title in /Users/grantes/Sites/stylite_app/fuel/app/views/404.php on line 5
 Error - 2012-09-06 21:16:56 --> 8 - Undefined variable: title in /Users/grantes/Sites/stylite_app/fuel/app/views/404.php on line 45
+Error - 2012-09-06 21:27:29 --> 8 - Undefined variable: title in /Users/grantes/Sites/stylite_app/fuel/app/views/404.php on line 5
+Error - 2012-09-06 21:27:29 --> 8 - Undefined variable: title in /Users/grantes/Sites/stylite_app/fuel/app/views/404.php on line 45
+Error - 2012-09-06 21:27:29 --> 8 - Undefined variable: title in /Users/grantes/Sites/stylite_app/fuel/app/views/404.php on line 5
+Error - 2012-09-06 21:27:29 --> 8 - Undefined variable: title in /Users/grantes/Sites/stylite_app/fuel/app/views/404.php on line 45
+Error - 2012-09-06 21:27:29 --> 8 - Undefined variable: title in /Users/grantes/Sites/stylite_app/fuel/app/views/404.php on line 5
+Error - 2012-09-06 21:27:29 --> 8 - Undefined variable: title in /Users/grantes/Sites/stylite_app/fuel/app/views/404.php on line 45

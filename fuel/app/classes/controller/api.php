@@ -24,4 +24,9 @@ class Controller_Api extends Controller_Rest
 			'message' => 'email_subscribed',
 		));
 	}
+
+	public function post_newuser()
+	{
+		print_r(Input::post('signupObj'));
+	}
 }
