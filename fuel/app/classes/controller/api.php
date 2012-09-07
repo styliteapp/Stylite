@@ -34,7 +34,7 @@ class Controller_Api extends Controller_Rest
 			'lName'		=>	Input::post('lName')
 		);
 
-		//$created = Model_Newuser::add_user($signupObj);
+		$created = Model_Newuser::add_user($signupObj);
 
 		/*if (! $created)
 		{

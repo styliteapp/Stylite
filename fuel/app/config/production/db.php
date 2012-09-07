@@ -1,4 +1,4 @@
-<?php
+ oppen <?php
 /**
  * The production database settings.
  */
@@ -8,7 +8,7 @@ return array(
 		'connection'  => array(
 			'dsn'        => 'mysql:host=127.0.0.1;dbname=StyliteDB',
 			'username'   => 'root',
-			'password'   => 'root',
+			'password'   => '107Xt66tAN5516m',
 		),
 	),
 );
