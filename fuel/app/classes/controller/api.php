@@ -40,7 +40,7 @@ class Controller_Api extends Controller_Rest
 			'lName'		=>	Input::post('lName'),
 		);
 
-		$created = Model_Newuser::add_user($signupObj->email, $signupObj->password, $signupObj->fName, $signupObj->lName);
+		/*$created = Model_Newuser::add_user($signupObj->email, $signupObj->password, $signupObj->fName, $signupObj->lName);
 
 		if (! $created)
 		{
@@ -48,11 +48,11 @@ class Controller_Api extends Controller_Rest
 				'success'	=>	false,
 				'message'	=>	'invalid_signup',
 			));
-		}
+		}*/
 
 		$this->response(array(
 			'success'	=>	true,
-			'message'	=>	'new_user created',
+			'message'	=>	$signupObj->email' created',
 		));
 	}
 }
