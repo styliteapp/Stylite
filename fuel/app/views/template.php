@@ -41,6 +41,7 @@
 </div><!-- close CONTAINER -->
 
 <?= Asset::js('main.js') ?>
+<?= Asset::js('stylite.js') ?>
 <?= Casset::render_js() ?>
 
 </body>
