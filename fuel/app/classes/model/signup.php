@@ -21,7 +21,7 @@ class Model_Signup extends \Orm\Model {
 
 	public static function add_email($email)
 	{
-		$valid = filter_var($post->input, FILTER_VALIDATE_EMAIL);
+		$valid = filter_var($email, FILTER_VALIDATE_EMAIL);
 
 		if ($valid === false)
 		{

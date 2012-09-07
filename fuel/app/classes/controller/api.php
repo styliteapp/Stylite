@@ -2,6 +2,12 @@
 
 class Controller_Api extends Controller_Rest
 {
+
+	public function get_test()
+	{
+		$this->response(true, 'works');	
+	}
+	
 	public function post_signup()
 	{
 		$post = (object) array(
