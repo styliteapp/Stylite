@@ -52,7 +52,7 @@ class Controller_Api extends Controller_Rest
 
 		$this->response(array(
 			'success'	=>	true,
-			'message'	=>	$signupObj->email' created',
+			'message'	=>	$signupObj->email.' created',
 		));
 	}
 }
