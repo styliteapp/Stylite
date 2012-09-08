@@ -3,7 +3,7 @@
 class Controller_Api extends Controller_Rest
 {
 
-	public function get_test()
+	public function post_test()
 	{
 		$this->response(true, 'works');	
 	}
@@ -33,6 +33,8 @@ class Controller_Api extends Controller_Rest
 
 	public function post_newuser()
 	{
+		$this-response->set_header('Access-Control-Allow-Origin', *);
+
 		$signupObj = (object) array(
 			'email'		=>	Input::post('email'),
 			'password'	=>	Input::post('password'),

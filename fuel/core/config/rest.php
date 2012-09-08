@@ -28,7 +28,7 @@ return array(
 	|	Default: xml
 	|
 	*/
-	'default_format' => 'json',
+	'default_format' => 'jsonp',
 
 	/*
 	| Name for the password protected REST API displayed on login dialogs
