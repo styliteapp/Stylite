@@ -211,7 +211,6 @@ return array(
 		 */
 		'packages'  => array(
 			'auth',
-			'simpleauth',
 			'casset',
 			'orm',
 		),
