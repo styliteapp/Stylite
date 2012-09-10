@@ -3,7 +3,7 @@
 class Controller_Api extends Controller_Rest
 {
 
-	public function post_test()
+	public function get_test()
 	{
 		$this->response(true, 'works');	
 	}
