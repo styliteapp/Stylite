@@ -26,14 +26,14 @@ class Model_Newuser extends \Orm\Model {
 	{
 		$creation = static::forge(array(
 			'email' 	=> $email,
-			'password'	=> $password,
+			'password'	=> sha1($password.'$ty|eN3veRfAd3S'),
 			'first_name'=> $fName,
 			'last_name'	=> $lName
 		));
 
 		$creation->save();
 
-		//return $creation;
+		return $creation;
 	}
 	
 }
