@@ -47,7 +47,7 @@ class Controller_Api extends Controller_Rest
 
 		$this->response(array(
 			'success'	=>	true,
-			'message'	=>	$signupObj->email.' '.$signupObj->password.' '.$signupObj->fName.' '.$signupObj->lName.' created',
+			'message'	=>	$signupObj->email.' created',
 		));
 	}
 }
