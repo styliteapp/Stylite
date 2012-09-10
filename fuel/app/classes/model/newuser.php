@@ -33,7 +33,7 @@ class Model_Newuser extends \Orm\Model {
 
 		$creation->save();
 
-		//return $creation;
+		return $creation;
 	}
 	
 }
