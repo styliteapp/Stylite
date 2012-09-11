@@ -84,7 +84,7 @@ class Controller_Api extends Controller_Rest
 
 	 	$this->response(array(
 	 		'success'	=>	true,
-	 		'user'		=>	array('id'=>$user->id,'email'=>$user->email,'first_name'=>$user->first_name,'last_name'=>$user->last_name)
+	 		'user'		=>	(Object) array('id'=>$user->id,'email'=>$user->email,'first_name'=>$user->first_name,'last_name'=>$user->last_name)
 	 	));
  	}
 }
