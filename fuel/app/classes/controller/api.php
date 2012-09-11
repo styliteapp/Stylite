@@ -44,7 +44,7 @@ class Controller_Api extends Controller_Rest
 			'lName'		=>	Input::post('lName'),
 		);
 
-		$created = Model_Newuser::add_user($signupObj->email, $signupObj->password, $signupObj->fName, $signupObj->lName);
+		$created = Model_User::add_user($signupObj->email, $signupObj->password, $signupObj->fName, $signupObj->lName);
 
 		if (! $created)
 		{
@@ -72,9 +72,9 @@ class Controller_Api extends Controller_Rest
 	 		'password'	=>	Input::post('password'),
 	 	);
 
-	 	$user['user'] = Model_Userlogin::log_in($loginObj->email, $loginObj->password);
+	 	$loggedinuser = Model_Userlogin::log_in($loginObj->email, $loginObj->password);
 
-	 	if (! $user['user'])
+	 	if (! $loggedinuser)
 	 	{
 		 	$this->response(array(
 		 		'success'	=>	false,
@@ -84,9 +84,7 @@ class Controller_Api extends Controller_Rest
 
 	 	$this->response(array(
 	 		'success'	=>	true,
-	 		'user'		=>	'joeBob',
+	 		'user'		=>	$loggedinuser,
 	 	));
-	 	//$loggedin->first_name.
-	 	//->first_name.'_is_logged_in'
  	}
 }
