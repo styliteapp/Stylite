@@ -69,23 +69,22 @@ class Controller_Api extends Controller_Rest
  	{
 	 	$loginObj = (Object) array(
 	 		'email'		=>	Input::post('email'),
-	 		'password'	=>	sha1(Input::post('password').'$ty|eN3veRfAd3S'),
+	 		'password'	=>	Input::post('password'),
 	 	);
 
-	 	//$user = Model_User::log_in($loginObj->email, $loginObj->password);
-	 	//$user = Model_User::find()->where('password', $loginObj->password)->get_one();
+	 	$user = Model_User::log_in($loginObj->email, $loginObj->password);
 
-	 	//if (! $user)
-	 	//{
-		 	//$this->response(array(
-		 		//'success'	=>	false,
-		 		//'message'	=>	'invalid_login',
-		 	//));
-	 	//}
+	 	if (! $user)
+	 	{
+		 	$this->response(array(
+		 		'success'	=>	false,
+		 		'message'	=>	'invalid_login',
+		 	));
+	 	}
 
 	 	$this->response(array(
 	 		'success'	=>	true,
-	 		'user'		=>	$loginObj->password;
+	 		'user'		=>	$user->last_name
 	 	));
  	}
 }
