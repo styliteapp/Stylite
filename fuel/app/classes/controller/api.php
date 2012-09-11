@@ -72,7 +72,7 @@ class Controller_Api extends Controller_Rest
 	 		'password'	=>	Input::post('password'),
 	 	);
 
-	 	$user = Model_Userlogin::log_in($loginObj->email, $loginObj->password);
+	 	$user['user'] = Model_Userlogin::log_in($loginObj->email, $loginObj->password);
 
 	 	if (! $user)
 	 	{
