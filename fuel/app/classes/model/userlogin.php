@@ -15,9 +15,12 @@ class Model_Userlogin extends \Orm\Model {
 
 		$loggedin = static::find()->where('password', $hash_pass)->get_one();
 
-		//$creation->save();
+		foreach($loggedin->result() as $detail)
+		{
+			$user[] = $detail;
+		}
 
-		return $loggedin;
+		return $user;
 	}
 	
 }

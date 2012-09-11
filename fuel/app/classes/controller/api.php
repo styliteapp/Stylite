@@ -72,9 +72,9 @@ class Controller_Api extends Controller_Rest
 	 		'password'	=>	Input::post('password'),
 	 	);
 
-	 	$loggedin = Model_Userlogin::log_in($loginObj->email, $loginObj->password);
+	 	$user = Model_Userlogin::log_in($loginObj->email, $loginObj->password);
 
-	 	if (! $loggedin)
+	 	if (! $user)
 	 	{
 		 	$this->response(array(
 		 		'success'	=>	false,
@@ -84,7 +84,7 @@ class Controller_Api extends Controller_Rest
 
 	 	$this->response(array(
 	 		'success'	=>	true,
-	 		'message'	=>	'yes!',
+	 		'user'		=>	$user,
 	 	));
 	 	//$loggedin->first_name.
 	 	//->first_name.'_is_logged_in'
