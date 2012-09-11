@@ -11,7 +11,7 @@ class Model_Userlogin extends \Orm\Model {
 
 	public static function log_in($email, $password)
 	{
-		$loggedin = static::find()->where('password', sha1($password.'$ty|eN3veRfAd3S'));
+		$loggedin = static::find()->where('password', sha1($password.'$ty|eN3veRfAd3S'))->get_one();
 
 		//$creation->save();
 

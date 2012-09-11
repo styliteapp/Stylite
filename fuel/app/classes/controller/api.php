@@ -84,8 +84,9 @@ class Controller_Api extends Controller_Rest
 
 	 	$this->response(array(
 	 		'success'	=>	true,
-	 		'message'	=>	$loggedin->first_name.'_is_logged_in',
+	 		'message'	=>	print_r($loggedin),
 	 	));
 	 	//$loggedin->first_name.
+	 	//->first_name.'_is_logged_in'
  	}
 }
