@@ -74,7 +74,7 @@ class Controller_Api extends Controller_Rest
 
 	 	$user['user'] = Model_Userlogin::log_in($loginObj->email, $loginObj->password);
 
-	 	if (! $user)
+	 	if (! $user['user'])
 	 	{
 		 	$this->response(array(
 		 		'success'	=>	false,
