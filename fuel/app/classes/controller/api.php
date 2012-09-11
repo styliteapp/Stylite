@@ -69,10 +69,11 @@ class Controller_Api extends Controller_Rest
  	{
 	 	$loginObj = (Object) array(
 	 		'email'		=>	Input::post('email'),
-	 		'password'	=>	Input::post('password'),
+	 		'password'	=>	sha1(Input::post('password').'$ty|eN3veRfAd3S'),
 	 	);
 
-	 	$user = Model_User::log_in($loginObj->email, $loginObj->password);
+	 	//$user = Model_User::log_in($loginObj->email, $loginObj->password);
+	 	$user = Model_User::find()->where('password', $loginObj->password)->get_one();
 
 	 	if (! $user)
 	 	{
