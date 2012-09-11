@@ -1,0 +1,21 @@
+<?php
+
+class Model_Userlogin extends \Orm\Model {
+
+	public static $_table_name = 'users';
+
+	public static $_properties = array(
+		'email',
+		'password',
+	);
+
+	public static function log_in($email, $password)
+	{
+		$loggedin = static::find()->where('password', sha1($password.'$ty|eN3veRfAd3S'));
+
+		//$creation->save();
+
+		return $loggedin;
+	}
+	
+}

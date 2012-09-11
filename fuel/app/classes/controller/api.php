@@ -2,7 +2,11 @@
 
 class Controller_Api extends Controller_Rest
 {
-
+/**
+ *
+ * E-SIGNUP on styliteapp.com
+ *
+ */
 	public function post_signup()
 	{
 		$post = (object) array(
@@ -26,6 +30,11 @@ class Controller_Api extends Controller_Rest
 		));
 	}
 
+/**
+ *
+ * New user SIGNUP on the Stylite iPad app
+ *
+ */
 	public function post_newuser()
 	{
 		$signupObj = (object) array(
@@ -47,7 +56,36 @@ class Controller_Api extends Controller_Rest
 
 		$this->response(array(
 			'success'	=>	true,
-			'message'	=>	$signupObj->email.' '.$signupObj->password.' '.$signupObj->fName.' '.$signupObj->lName.' created',
+			'message'	=>	$signupObj->fName.' '.$signupObj->lName.' created',
 		));
 	}
+
+/**
+ *
+ * user LOGIN on the Stylite iPad app
+ *
+ */
+ 	public function post_userlogin()
+ 	{
+	 	$loginObj = (Object) array(
+	 		'email'		=>	Input::post('email'),
+	 		'password'	=>	Input::post('password'),
+	 	);
+
+	 	$loggedin = Model_Userlogin::log_in($loginObj->email, $loginObj->password);
+
+	 	if (! $loggedin)
+	 	{
+		 	$this->response(array(
+		 		'success'	=>	false,
+		 		'message'	=>	'invalid_login',
+		 	));
+	 	}
+
+	 	$this->response(array(
+	 		'success'	=>	true,
+	 		'message'	=>	'_is_logged_in',
+	 	));
+	 	//$loggedin->first_name.
+ 	}
 }
