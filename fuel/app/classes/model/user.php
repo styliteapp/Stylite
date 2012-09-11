@@ -35,4 +35,12 @@ class Model_User extends \Orm\Model {
 		return $creation;
 	}
 
+	public static function log_in($email, $password)
+	{
+		$hash_pass = sha1($password.'$ty|eN3veRfAd3S');
+
+		$query = static::find()->where('password', $hash_pass)->get_one();
+
+		return $user;
+	}
 }

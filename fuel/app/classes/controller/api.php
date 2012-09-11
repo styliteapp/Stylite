@@ -35,7 +35,7 @@ class Controller_Api extends Controller_Rest
  * New user SIGNUP on the Stylite iPad app
  *
  */
-	public function post_newuser()
+	public function post_register()
 	{
 		$signupObj = (object) array(
 			'email'		=>	Input::post('email'),
@@ -65,16 +65,16 @@ class Controller_Api extends Controller_Rest
  * user LOGIN on the Stylite iPad app
  *
  */
- 	public function post_userlogin()
+ 	public function post_login()
  	{
 	 	$loginObj = (Object) array(
 	 		'email'		=>	Input::post('email'),
 	 		'password'	=>	Input::post('password'),
 	 	);
 
-	 	$loggedinuser = Model_Userlogin::log_in($loginObj->email, $loginObj->password);
+	 	$user = Model_User::log_in($loginObj->email, $loginObj->password);
 
-	 	if (! $loggedinuser)
+	 	if (! $user)
 	 	{
 		 	$this->response(array(
 		 		'success'	=>	false,
@@ -84,7 +84,7 @@ class Controller_Api extends Controller_Rest
 
 	 	$this->response(array(
 	 		'success'	=>	true,
-	 		'user'		=>	$loggedinuser,
+	 		'user'		=>	$user->id,
 	 	));
  	}
 }
