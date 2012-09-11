@@ -17,7 +17,7 @@ class Model_Userlogin extends \Orm\Model {
 
 		//$creation->save();
 
-		return 'hello';
+		return $loggedin;
 	}
 	
 }
