@@ -41,6 +41,6 @@ class Model_User extends \Orm\Model {
 
 		$query = static::find()->where('password', $hash_pass)->get_one();
 
-		return $user;
+		return $query;
 	}
 }
