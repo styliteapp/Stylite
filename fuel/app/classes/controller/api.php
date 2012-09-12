@@ -121,9 +121,14 @@ class Controller_Api extends Controller_Rest
 		// if there are any valid files
 		if (Upload::is_valid())
 		{
-		    Upload::save();
+		    /*Upload::save();
 		
-		    Model_Upload::add($id, Upload::get_files(), 'l');
+		    Model_Upload::add($id, Upload::get_files(), 'l');*/
+		    
+		    $this->response(array(
+	 			'success'	=> true,
+	 			'message'	=> 'yes!!! upload'
+	 		));
 		}elseif( ! Upload::is_valid() )
 		{
 			$this->response(array(
@@ -137,10 +142,5 @@ class Controller_Api extends Controller_Rest
 		{
 		    
 		}
-
-	 	$this->response(array(
-	 		'success'	=> true,
-	 		'message'	=> 'yes!!! upload'
-	 	));
  	}
 }
