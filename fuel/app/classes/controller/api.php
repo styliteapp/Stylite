@@ -103,7 +103,7 @@ class Controller_Api extends Controller_Rest
  * UPLOAD new closet item image
  *
  */
- 	public function post_uploadImage()
+ 	public function post_imageUpload()
  	{
 	 	$base64	= Input::post('base64');
 
