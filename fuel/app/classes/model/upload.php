@@ -20,16 +20,21 @@ class Model_Upload extends \Orm\Model {
 		),
 	);
 
-	public static function add($id, $image, $size)
+	public static function add($id, $filename, $size)
 	{
-		foreach($image as $i)
+		/*foreach($image as $i)
 		{
 			$creation = static::forge(array(
 				'user_id' 	=> $id,
 				'filename'	=> $i['name'].'_test_'.$i['extension'],
 				'size'		=> $size
 			));
-		}
+		}*/
+		$creation = static::forge(array(
+			'user_id' 	=> $id,
+			'filename'	=> $filename,
+			'size'		=> $size
+		));
 
 		$creation->save();
 

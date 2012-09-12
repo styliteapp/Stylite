@@ -108,19 +108,30 @@ class Controller_Api extends Controller_Rest
 	 	$base64	= Input::post('base64');
 	 	$id		= Input::post('user_id');
 	 	$lName	= Input::post('user_lName');
-	 	$img	= base64_decode($base64);
-	 	$success= file_put_contents(DOCROOT.'uploads/l/'.$lName.$id.'_'.time().'.jpg', $img);
+	 	$imgName= $lName.$id.'_'.time()
+	 	$imgData= base64_decode($base64);
+	 	$success= file_put_contents(DOCROOT.'uploads/l/'.$imgName.'.jpg', $imgData);
 
 	 	if( !$success ){
 		 	$this->response(array(
 	 			'success'	=> false,
-	 			'message'	=> 'not today'
+	 			'message'	=> 'bad upload'
+	 		));
+	 	}
+
+	 	$dbSave = Model_Upload::add($id, $imgName, 'l');
+
+	 	if( ! $dbSave )
+	 	{
+		 	$this->response(array(
+	 			'success'	=> false,
+	 			'message'	=> 'bad upload'
 	 		));
 	 	}
 
 	 	$this->response(array(
-	 		'success'	=> false,
-	 		'message'	=> 'good upload'
+	 		'success'	=> true,
+	 		'message'	=> 'http://styliteapp.com/uploads/l/'.$imgName
 	 	));
 	 	// Custom configuration for this upload
 		/*$config = array(
