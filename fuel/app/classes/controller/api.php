@@ -123,14 +123,14 @@ class Controller_Api extends Controller_Rest
 		{
 		    Upload::save();
 		
-		    Model_Upload::add($id, Upload::get_files(), 's');
+		    Model_Upload::add($id, Upload::get_files(), 'l');
 		}
 		
 		// and process any errors
-		foreach (Upload::get_files() as $file)
+		/*foreach (Upload::get_files() as $file)
 		{
 		    
-		}
+		}*/
 
 	 	$this->response(array(
 	 		'success'	=> true,
