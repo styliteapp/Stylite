@@ -110,7 +110,7 @@ class Controller_Api extends Controller_Rest
 
 	 	// Custom configuration for this upload
 		$config = array(
-		    'path' => DOCROOT.DS.'uploads',
+		    'path' => DOCROOT.DS.'uploads/l',
 		    'randomize' => true,
 		    'ext_whitelist' => array('jpg', 'jpeg', 'png'),
 		);
