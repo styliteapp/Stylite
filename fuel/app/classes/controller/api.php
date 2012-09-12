@@ -110,7 +110,7 @@ class Controller_Api extends Controller_Rest
 
 	 	// Custom configuration for this upload
 		$config = array(
-		    'path' => DOCROOT.DS.'files',
+		    'path' => DOCROOT.DS.'uploads',
 		    'randomize' => true,
 		    'ext_whitelist' => array('jpg', 'jpeg', 'png'),
 		);
@@ -129,12 +129,12 @@ class Controller_Api extends Controller_Rest
 		// and process any errors
 		foreach (Upload::get_files() as $file)
 		{
-		    $newImg = $file;
+		    
 		}
 
 	 	$this->response(array(
 	 		'success'	=> true,
-	 		'message'	=> $newImg
+	 		'message'	=> 'good ajax'
 	 	));
  	}
 }
