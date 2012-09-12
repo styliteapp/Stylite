@@ -108,6 +108,8 @@ class Controller_Api extends Controller_Rest
 	 	$base64	= Input::post('base64');
 	 	$id		= Input::post('user_id');
 	 	$image	= base64_decode($base64);
+	 	$success= file_put_contents(DOCROOT.DS.'uploads/l'.'asdfasdfasdfasdf', $image);
+	 	
 
 	 	// Custom configuration for this upload
 		$config = array(
