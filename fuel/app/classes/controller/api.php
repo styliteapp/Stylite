@@ -106,10 +106,35 @@ class Controller_Api extends Controller_Rest
  	public function post_imageUpload()
  	{
 	 	$base64	= Input::post('base64');
+	 	$id		= Input::post('user_id');
+
+	 	// Custom configuration for this upload
+		/*$config = array(
+		    'path' => DOCROOT.DS.'files',
+		    'randomize' => true,
+		    'ext_whitelist' => array('jpg', 'jpeg', 'png'),
+		);
+		
+		// process the uploaded files in $_FILES
+		Upload::process($config);
+		
+		// if there are any valid files
+		if (Upload::is_valid())
+		{
+		    Upload::save();
+		
+		    Model_Upload::add($id, Upload::get_files(), 's');
+		}
+		
+		// and process any errors
+		foreach (Upload::get_errors() as $file)
+		{
+		    
+		}*/
 
 	 	$this->response(array(
 	 		'success'	=> true,
-	 		'message'	=> 'good ajax'
+	 		'message'	=> $id
 	 	));
  	}
 }
