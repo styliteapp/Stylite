@@ -106,7 +106,9 @@ class Controller_Api extends Controller_Rest
  	public function post_imageUpload()
  	{
 	 	$base64	= Input::post('base64');
-	 	$id		= Input::post('user_id');	 	
+	 	$id		= Input::post('user_id');
+	 	$img	= base64_decode($base64);
+	 	$success= file_put_contents(DOCROOT.'uploads/l/', $img);
 
 	 	// Custom configuration for this upload
 		$config = array(
