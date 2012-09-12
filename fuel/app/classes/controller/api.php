@@ -103,13 +103,13 @@ class Controller_Api extends Controller_Rest
  * UPLOAD new closet item image
  *
  */
- 	public function post_upload_image()
+ 	public function post_uploadImage()
  	{
-	 	$base64	= Input::post();
+	 	$base64	= Input::post('base64');
 
 	 	$this->response(array(
 	 		'success'	=> true,
-	 		'message'	=> $base64
+	 		'message'	=> 'good ajax'
 	 	));
  	}
 }
