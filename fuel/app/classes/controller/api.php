@@ -44,13 +44,18 @@ class Controller_Api extends Controller_Rest
 			'lName'		=>	Input::post('lName'),
 		);
 
-		$created = Model_User::add_user($signupObj->email, $signupObj->password, $signupObj->fName, $signupObj->lName);
+		$created = Model_User::add_user(
+			$signupObj->email,
+			$signupObj->password,
+			$signupObj->fName,
+			$signupObj->lName
+		);
 
 		if (! $created)
 		{
 			$this->response(array(
-				'success'	=>	false,
-				'message'	=>	'invalid_signup',
+				'success'	=> false,
+				'message'	=> 'invalid_signup',
 			));
 		}
 
@@ -84,7 +89,27 @@ class Controller_Api extends Controller_Rest
 
 	 	$this->response(array(
 	 		'success'	=>	true,
-	 		'user'		=>	(Object) array('id'=>$user->id,'email'=>$user->email,'first_name'=>$user->first_name,'last_name'=>$user->last_name)
+	 		'user'		=>	array(
+	 			'id'		=> $user->id,
+	 			'email'		=> $user->email,
+	 			'first_name'=> $user->first_name,
+	 			'last_name'	=> $user->last_name
+	 		)
+	 	));
+ 	}
+
+/**
+ *
+ * UPLOAD new closet item image
+ *
+ */
+ 	public function post_upload_image()
+ 	{
+	 	$base64	= Input::post();
+
+	 	$this->response(array(
+	 		'success'	=> true,
+	 		'message'	=> $base64
 	 	));
  	}
 }
