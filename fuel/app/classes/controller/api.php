@@ -107,11 +107,23 @@ class Controller_Api extends Controller_Rest
  	{
 	 	$base64	= Input::post('base64');
 	 	$id		= Input::post('user_id');
+	 	$lName	= Input::post('user_lName');
 	 	$img	= base64_decode($base64);
-	 	$success= file_put_contents(DOCROOT.'uploads/l/yoyoyo.jpg', $img);
+	 	$success= file_put_contents(DOCROOT.'uploads/l/'.$lName.$id.'_'.time().'.jpg', $img);
 
+	 	if( !$success ){
+		 	$this->response(array(
+	 			'success'	=> false,
+	 			'message'	=> 'not today'
+	 		));
+	 	}
+
+	 	$this->response(array(
+	 		'success'	=> false,
+	 		'message'	=> 'good upload'
+	 	));
 	 	// Custom configuration for this upload
-		$config = array(
+		/*$config = array(
 		    'path' => DOCROOT.DS.'uploads/l',
 		    'randomize' => true,
 		    'ext_whitelist' => array('jpg', 'jpeg', 'png'),
@@ -125,7 +137,7 @@ class Controller_Api extends Controller_Rest
 		{
 		    Upload::save();
 		
-		    /*Model_Upload::add($id, Upload::get_files(), 'l');*/
+		    Model_Upload::add($id, Upload::get_files(), 'l');
 		    
 		    $this->response(array(
 	 			'success'	=> true,
@@ -143,6 +155,6 @@ class Controller_Api extends Controller_Rest
 		foreach (Upload::get_files() as $file)
 		{
 		    
-		}
+		}*/
  	}
 }
