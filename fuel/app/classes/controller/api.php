@@ -134,7 +134,7 @@ class Controller_Api extends Controller_Rest
 
 	 	$this->response(array(
 	 		'success'	=> true,
-	 		'message'	=> $id
+	 		'message'	=> $base64.substr(0,10)
 	 	));
  	}
 }
