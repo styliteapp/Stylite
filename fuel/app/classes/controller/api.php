@@ -119,7 +119,7 @@ class Controller_Api extends Controller_Rest
 	 		));
 	 	}
 
-	 	$dbSave = Model_Upload::add($id, $imgName, 'l');
+	 	$dbSave = Model_Upload::add($id, $imgName.'.jpg', 'l');
 
 	 	if( ! $dbSave )
 	 	{
