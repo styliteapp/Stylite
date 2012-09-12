@@ -109,7 +109,7 @@ class Controller_Api extends Controller_Rest
 	 	$id		= Input::post('user_id');
 
 	 	// Custom configuration for this upload
-		/*$config = array(
+		$config = array(
 		    'path' => DOCROOT.DS.'uploads/l',
 		    'randomize' => true,
 		    'ext_whitelist' => array('jpg', 'jpeg', 'png'),
@@ -124,17 +124,23 @@ class Controller_Api extends Controller_Rest
 		    Upload::save();
 		
 		    Model_Upload::add($id, Upload::get_files(), 'l');
+		}elseif( ! Upload::is_valid() )
+		{
+			$this->response(array(
+	 			'success'	=> false,
+	 			'message'	=> 'not today'
+	 		));
 		}
 		
 		// and process any errors
 		foreach (Upload::get_files() as $file)
 		{
 		    
-		}*/
+		}
 
 	 	$this->response(array(
 	 		'success'	=> true,
-	 		'message'	=> substr($base64,0,10)
+	 		'message'	=> 'yes!!! upload'
 	 	));
  	}
 }
