@@ -109,7 +109,7 @@ class Controller_Api extends Controller_Rest
 	 	$id		= Input::post('user_id');
 
 	 	// Custom configuration for this upload
-		/*$config = array(
+		$config = array(
 		    'path' => DOCROOT.DS.'files',
 		    'randomize' => true,
 		    'ext_whitelist' => array('jpg', 'jpeg', 'png'),
@@ -127,14 +127,14 @@ class Controller_Api extends Controller_Rest
 		}
 		
 		// and process any errors
-		foreach (Upload::get_errors() as $file)
+		foreach (Upload::get_files() as $file)
 		{
-		    
-		}*/
+		    $newImg = $file;
+		}
 
 	 	$this->response(array(
 	 		'success'	=> true,
-	 		'message'	=> $id
+	 		'message'	=> $newImg
 	 	));
  	}
 }
