@@ -107,6 +107,7 @@ class Controller_Api extends Controller_Rest
  	{
 	 	$base64	= Input::post('base64');
 	 	$id		= Input::post('user_id');
+	 	$image	= base64_decode($base64);
 
 	 	// Custom configuration for this upload
 		$config = array(
@@ -121,9 +122,9 @@ class Controller_Api extends Controller_Rest
 		// if there are any valid files
 		if (Upload::is_valid())
 		{
-		    /*Upload::save();
+		    Upload::save();
 		
-		    Model_Upload::add($id, Upload::get_files(), 'l');*/
+		    /*Model_Upload::add($id, Upload::get_files(), 'l');*/
 		    
 		    $this->response(array(
 	 			'success'	=> true,
