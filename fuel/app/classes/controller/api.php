@@ -108,7 +108,7 @@ class Controller_Api extends Controller_Rest
 	 	$base64	= Input::post('base64');
 	 	$id		= Input::post('user_id');
 	 	$lName	= Input::post('user_lName');
-	 	$imgName= $lName.$id.'_'.time()
+	 	$imgName= $lName.$id.'_'.time();
 	 	$imgData= base64_decode($base64);
 	 	$success= file_put_contents(DOCROOT.'uploads/l/'.$imgName.'.jpg', $imgData);
 
