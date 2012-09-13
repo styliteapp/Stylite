@@ -116,9 +116,16 @@ class Controller_Api extends Controller_Rest
 		if( Upload::is_valid() ){
 			Upload::save();
 
+			Model_Upload::add($id, Upload::get_files());
+
 			$this->response(array(
 				'success'	=> true,
-				'message'	=> 'yay.'
+				'message'	=> 'good.'
+			));
+		}elseif( !Upload::is_valid() ){
+			$this->response(array(
+				'success'	=> false,
+				'message'	=> 'bad.'
 			));
 		}
  	}
