@@ -105,7 +105,7 @@ class Controller_Api extends Controller_Rest
  */
  	public function post_imageUpload()
  	{
-		$imgName= Input::post('user_lName').'_'.Input::post('user_id').'_'.time();
+		$imgName= md5(rand().time());
 		$imgData= base64_decode(Input::post('base64'));
 		$success= file_put_contents(DOCROOT.'uploads/l/'.$imgName.'.jpg', $imgData);
 	
