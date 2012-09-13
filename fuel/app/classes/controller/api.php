@@ -111,7 +111,8 @@ class Controller_Api extends Controller_Rest
 
 	 	$sizes = Image::sizes(DOCROOT.'uploads/l/'.$imgName.'.jpg');
 
-	 	Image::load(DOCROOT.'uploads/l/'.$imgName.'.jpg', true)->resize(200);
+	 	$image = Image::forge(array('quality'=>60));
+	 	$image->load(DOCROOT.'uploads/l/'.$imgName.'.jpg')->resize(200);
 
 	 	if( !$success ){
 		 	$this->response(array(
