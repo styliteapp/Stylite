@@ -115,6 +115,7 @@ class Controller_Api extends Controller_Rest
 				'message'	=> 'bad upload'
 			));
 		}else{
+			Image::load(DOCROOT.'uploads/l/'.$imgName.'.jpg')->resize(200)->save(DOCROOT.'uploads/s/'.$imgName.'.jpg');
 			$dbSave = Model_Upload::add(Input::post('user_id'), $imgName.'.jpg');
 		}
 	
