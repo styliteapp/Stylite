@@ -117,7 +117,7 @@ class Controller_Api extends Controller_Rest
 	 			'message'	=> 'bad upload'
 	 		));
 	 	}else{
-			$image = Image::load('http://styliteapp.com/uploads/l/'.$imgName.'.jpg');
+			$image = Image::load($imgData);
 			$dbSave = Model_Upload::add(Input::post('user_id'), $imgName.'.jpg');
 	 	}
 
