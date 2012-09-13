@@ -105,12 +105,11 @@ class Controller_Api extends Controller_Rest
  */
  	public function post_imageUpload()
  	{
-	 	//$base64	= Input::post('base64');
-	 	$id		= Input::post('user_id');
-	 	/*$lName	= Input::post('user_lName');
-	 	$imgName= $lName.$id.'_'.time();
-	 	$imgData= base64_decode($base64);
+	 	$imgName= Input::post('user_lName').'_'.Input::post('user_id').'_'.time();
+	 	$imgData= base64_decode(Input::post('base64'));
 	 	$success= file_put_contents(DOCROOT.'uploads/l/'.$imgName.'.jpg', $imgData);
+
+	 	$sizes = Image::sizes($imgName)
 
 	 	if( !$success ){
 		 	$this->response(array(
@@ -119,7 +118,7 @@ class Controller_Api extends Controller_Rest
 	 		));
 	 	}
 
-	 	$dbSave = Model_Upload::add($id, $imgName.'.jpg', 'l');
+	 	$dbSave = Model_Upload::add(Input::post('user_id'), $imgName.'.jpg');
 
 	 	if( ! $dbSave )
 	 	{
@@ -131,47 +130,7 @@ class Controller_Api extends Controller_Rest
 
 	 	$this->response(array(
 	 		'success'	=> true,
-	 		'message'	=> 'http://styliteapp.com/uploads/l/'.$imgName.'.jpg'
-	 	));*/
-	 	
-	 	
-	 	
-	 	
-	 	// Custom configuration for this upload
-		$config = array(
-		    'path' => DOCROOT.DS.'uploads/l',
-		    'randomize' => true,
-		    'ext_whitelist' => array('jpg', 'jpeg', 'png'),
-		);
-		
-		// process the uploaded files in $_FILES
-		Upload::process($config);
-		
-		// if there are any valid files
-		if (Upload::is_valid())
-		{
-		    Upload::save();
-		
-		    Model_Upload::add($id, Upload::get_files());
-		    
-		    $this->response(array(
-	 			'success'	=> true,
-	 			'message'	=> 'yes!!! upload'
-	 		));
-		}
-		
-		elseif ( ! Upload::is_valid())
-		{
-			$this->response(array(
-	 			'success'	=> false,
-	 			'message'	=> 'not today'
-	 		));
-		}
-		
-		// and process any errors
-		foreach (Upload::get_files() as $file)
-		{
-		    
-		}
+	 		'message'	=> $sizes
+	 	));
  	}
 }

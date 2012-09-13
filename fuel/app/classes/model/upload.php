@@ -19,69 +19,16 @@ class Model_Upload extends \Orm\Model {
 		),
 	);
 
-	public static function add($id, $files)
-	{
-		$uploads = array();
-		foreach ($files as $file)
-		{
-			list($filename, $extension) = explode('.', $file['saved_as']);
-			
-			// 
-			//Image::load('filename.gif')
-			//	->config('bgcolor', '#f00')
-			//	->resize(100, 100, true, true);
-			
-			$upload = static::forge(array(
-				'user_id' 	=> $id,
-				'filename'	=> $file['saved_as'],
-			));
-			
-			$upload->save();
-			
-			array_push($uploads, $upload)
-		}
-		
-		return $uploads;
-	}
-	
-	
-	
-	
-	
-	public function get_image($size)
-	{
-		if (!in_array($size, array('s', 'l')))
-		{
-			throw new Exception("Invalid image size {$size}");	
-		}
-		
-		return 'http://stylietapp.com/uploads/' . $size . '/' . $this->filename;
-	}
-	
-	
-	
-	
 	//working
-	/*
-public static function add($id, $filename, $size)
+	public static function add($id, $filename)
 	{
-		foreach($image as $i)
-		{
-			$creation = static::forge(array(
-				'user_id' 	=> $id,
-				'filename'	=> $i['name'].'_test_'.$i['extension'],
-				'size'		=> $size
-			));
-		}
 		$creation = static::forge(array(
 			'user_id' 	=> $id,
-			'filename'	=> $filename,
-			'size'		=> $size
+			'filename'	=> $filename
 		));
 
 		$creation->save();
 
 		return $creation;
 	}
-*/
 }
