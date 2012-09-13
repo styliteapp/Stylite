@@ -105,8 +105,6 @@ class Controller_Api extends Controller_Rest
  */
  	public function post_imageUpload()
  	{
-	 	$b64img = base64_decode(Input::post('base64'));;
-
 	 	$config = array(
 		    'path' => DOCROOT.'uploads/l',
 		    'randomize' => true,
@@ -115,11 +113,13 @@ class Controller_Api extends Controller_Rest
 
 		Upload::process($config);
 
-		Upload::save();
+		if( Upload::is_valid() ){
+			Upload::save();
 
-		$this->response(array(
-			'success'	=> true,
-			'message'	=> DOCROOT.'uploads/l'
-		));
+			$this->response(array(
+				'success'	=> true,
+				'message'	=> 'yay.'
+			));
+		}
  	}
 }
