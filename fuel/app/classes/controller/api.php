@@ -109,7 +109,7 @@ class Controller_Api extends Controller_Rest
 	 	$imgData= base64_decode(Input::post('base64'));
 	 	$success= file_put_contents(DOCROOT.'uploads/l/'.$imgName.'.jpg', $imgData);
 
-	 	$sizes = Image::sizes($imgName);
+	 	$sizes = Image::sizes(DOCROOT.'uploads/l/'.$imgName.'.jpg');
 
 	 	if( !$success ){
 		 	$this->response(array(
