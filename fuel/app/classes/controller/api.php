@@ -105,8 +105,8 @@ class Controller_Api extends Controller_Rest
  */
  	public function post_imageUpload()
  	{
-	 	$base64	= Input::post('base64');
-	 	$id		= Input::post('user_id');
+	 	//$base64	= Input::post('base64');
+	 	/*$id		= Input::post('user_id');
 	 	$lName	= Input::post('user_lName');
 	 	$imgName= $lName.$id.'_'.time();
 	 	$imgData= base64_decode($base64);
@@ -132,9 +132,13 @@ class Controller_Api extends Controller_Rest
 	 	$this->response(array(
 	 		'success'	=> true,
 	 		'message'	=> 'http://styliteapp.com/uploads/l/'.$imgName.'.jpg'
-	 	));
+	 	));*/
+	 	
+	 	
+	 	
+	 	
 	 	// Custom configuration for this upload
-		/*$config = array(
+		$config = array(
 		    'path' => DOCROOT.DS.'uploads/l',
 		    'randomize' => true,
 		    'ext_whitelist' => array('jpg', 'jpeg', 'png'),
@@ -148,13 +152,15 @@ class Controller_Api extends Controller_Rest
 		{
 		    Upload::save();
 		
-		    Model_Upload::add($id, Upload::get_files(), 'l');
+		    Model_Upload::add($id, Upload::get_files());
 		    
 		    $this->response(array(
 	 			'success'	=> true,
 	 			'message'	=> 'yes!!! upload'
 	 		));
-		}elseif( ! Upload::is_valid() )
+		}
+		
+		elseif ( ! Upload::is_valid())
 		{
 			$this->response(array(
 	 			'success'	=> false,
@@ -166,6 +172,6 @@ class Controller_Api extends Controller_Rest
 		foreach (Upload::get_files() as $file)
 		{
 		    
-		}*/
+		}
  	}
 }
