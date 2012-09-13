@@ -114,11 +114,9 @@ class Controller_Api extends Controller_Rest
 	 	if($sizes->width > $sizes->height)
 	 	{
 			Image::load(DOCROOT.'uploads/l/'.$imgName.'.jpg')
-	 			->save(DOCROOT.'uploads/s/'.$imgName.'.jpg')
 	 			->resize(200);
 	 	}else{
 		 	Image::load(DOCROOT.'uploads/l/'.$imgName.'.jpg')
-	 			->save(DOCROOT.'uploads/s/'.$imgName.'.jpg')
 	 			->resize(null, 200);
 	 	}
 
