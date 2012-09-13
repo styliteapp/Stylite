@@ -128,7 +128,7 @@ class Controller_Api extends Controller_Rest
 	
 		$this->response(array(
 			'success'	=> true,
-			'message'	=> $image
+			'message'	=> 'good upload'
 		));
  	}
 }
