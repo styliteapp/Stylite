@@ -105,33 +105,14 @@ class Controller_Api extends Controller_Rest
  */
  	public function post_imageUpload()
  	{
-	 	$imgName= Input::post('user_lName').'_'.Input::post('user_id').'_'.time();
-	 	$imgData= base64_decode(Input::post('base64'));
-	 	$success= file_put_contents(DOCROOT.'uploads/l/'.$imgName.'.jpg', $imgData);
+	 	$config = array(
+		    'path' => DOCROOT.'uploads/l',
+		    'randomize' => true,
+		    'ext_whitelist' => array('jpg', 'jpeg', 'png'),
+		);
 
-	 	//$sizes = Image::sizes(DOCROOT.'uploads/l/'.$imgName.'.jpg');
+		Upload::process($config);
 
-	 	if( !$success ){
-		 	$this->response(array(
-	 			'success'	=> false,
-	 			'message'	=> 'bad upload'
-	 		));
-	 	}else{
-			$image = Image::load($imgData);
-			$dbSave = Model_Upload::add(Input::post('user_id'), $imgName.'.jpg');
-	 	}
-
-	 	if( ! $dbSave )
-	 	{
-		 	$this->response(array(
-	 			'success'	=> false,
-	 			'message'	=> 'bad upload'
-	 		));
-	 	}
-
-	 	$this->response(array(
-	 		'success'	=> true,
-	 		'message'	=> $image
-	 	));
+		Upload::save();
  	}
 }

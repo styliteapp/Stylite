@@ -22,13 +22,6 @@ class Model_Upload extends \Orm\Model {
 	//working
 	public static function add($id, $filename)
 	{
-		$creation = static::forge(array(
-			'user_id' 	=> $id,
-			'filename'	=> $filename
-		));
-
-		$creation->save();
-
-		return $creation;
+		
 	}
 }
