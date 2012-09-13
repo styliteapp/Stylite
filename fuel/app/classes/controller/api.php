@@ -111,8 +111,12 @@ class Controller_Api extends Controller_Rest
 		    'ext_whitelist' => array('jpg', 'jpeg', 'png'),
 		);
 
-		Upload::process($config);
+		/*Upload::process($config);
 
-		Upload::save();
+		Upload::save();*/
+		$this->response(array(
+			'success'	=> true,
+			'message'	=> DOCROOT.'uploads/l'
+		));
  	}
 }
