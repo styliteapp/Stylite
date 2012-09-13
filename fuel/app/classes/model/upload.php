@@ -19,28 +19,16 @@ class Model_Upload extends \Orm\Model {
 		),
 	);
 
-	public static function add($id, $files)
+	public static function add($id, $filename)
 	{
-		$uploads = array();
-		foreach ($files as $file)
-		{
-			list($filename, $extension) = explode('.', $file['saved_as']);
-				
-			//Image::load('filename.gif')
-			//	->config('bgcolor', '#f00')
-			//	->resize(100, 100, true, true);
-			
-			$upload = static::forge(array(
-				'user_id' 	=> $id,
-				'filename'	=> $file['saved_as'],
-			));
-			
-			$upload->save();
-			
-			array_push($uploads, $upload)
-		}
-		
-		return $uploads;
+		$creation = static::forge(array(
+			'user_id' 	=> $id,
+			'filename'	=> $filename
+		));
+	
+		$creation->save();
+	
+		return $creation;
 	}
 
 	public function get_image($size)
