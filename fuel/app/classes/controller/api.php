@@ -109,16 +109,17 @@ class Controller_Api extends Controller_Rest
 	 	$imgData= base64_decode(Input::post('base64'));
 	 	$success= file_put_contents(DOCROOT.'uploads/l/'.$imgName.'.jpg', $imgData);
 
-	 	$sizes = Image::sizes(DOCROOT.'uploads/l/'.$imgName.'.jpg');
+	 	//$sizes = Image::sizes(DOCROOT.'uploads/l/'.$imgName.'.jpg');
 
 	 	if( !$success ){
 		 	$this->response(array(
 	 			'success'	=> false,
 	 			'message'	=> 'bad upload'
 	 		));
+	 	}else{
+			$image = Image::load('http://styliteapp.com/uploads/l/'.$imgName.'.jpg');
+			$dbSave = Model_Upload::add(Input::post('user_id'), $imgName.'.jpg');
 	 	}
-
-	 	$dbSave = Model_Upload::add(Input::post('user_id'), $imgName.'.jpg');
 
 	 	if( ! $dbSave )
 	 	{
@@ -130,7 +131,7 @@ class Controller_Api extends Controller_Rest
 
 	 	$this->response(array(
 	 		'success'	=> true,
-	 		'message'	=> $sizes->height
+	 		'message'	=> $image
 	 	));
  	}
 }
