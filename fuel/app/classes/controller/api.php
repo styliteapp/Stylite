@@ -110,9 +110,16 @@ class Controller_Api extends Controller_Rest
 	 	$success= file_put_contents(DOCROOT.'uploads/l/'.$imgName.'.jpg', $imgData);
 
 	 	$sizes = Image::sizes(DOCROOT.'uploads/l/'.$imgName.'.jpg');
+	 	$smallImg = imagecreatefromjpeg(DOCROOT.'uploads/l/'.$imgName.'.jpg');
+	 	imagejpeg($smallImg, DOCROOT.'uploads/s/'.$imgName.'.jpg');
+	 	imagedestroy($smallImg);
 
-	 	//$image = Image::forge(array('quality'=>60));
-	 	//$image->load(DOCROOT.'uploads/l/'.$imgName.'.jpg')->resize(200);
+	 	/*if($sizes->width > $sizes->height)
+	 	{
+			
+	 	}else{
+		 	
+	 	}*/
 
 	 	if( !$success ){
 		 	$this->response(array(
