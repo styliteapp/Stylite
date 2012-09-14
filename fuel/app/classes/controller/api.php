@@ -139,12 +139,12 @@ class Controller_Api extends Controller_Rest
 	 	
 	 	if( empty($smItems) )
 	 	{
-	 		$this-response(array(
+	 		$this->response(array(
 			 	'success'	=> false,
 			 	'message'	=> 'there were probs, yo',
 			));
 	 	}else{
-		 	$this-response(array(
+		 	$this->response(array(
 		 		'success'	=> true,
 		 		'images'	=> $smItems
 	 		));
