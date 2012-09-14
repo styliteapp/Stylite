@@ -116,7 +116,9 @@ class Controller_Api extends Controller_Rest
 			));
 		}else{
 			Image::load(DOCROOT.'uploads/l/'.$imgName.'.jpg')->resize('7.7160494%', '7.7160494%')->save(DOCROOT.'uploads/s/'.$imgName.'.jpg');
-			$dbSave = Model_Upload::add(Input::post('user_id'), $imgName.'.jpg');
+			$imgSizes = Image::sizes(DOCROOT.'uploads/s/'.$imgName.'.jpg');
+			$imgSize = $imgSizes['width'] > $imgSizes['height'] ? 'landscape' : 'portrait';
+			$dbSave = Model_Upload::add(Input::post('user_id'), $imgName.'.jpg', $imgSize);
 		}
 	
 		if( ! $dbSave )
