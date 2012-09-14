@@ -3,14 +3,33 @@
 <head>
 	<title>Debug - ajax</title>
 	<meta charset="utf-8">
-	<script src="js/jquery-1.8.1.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
 </head>
 <body>
 <p>
+	oh hi.
 </p>
 <script>
 	$.ajax({
-		
+		url		: 'http://styliteapp.com/index.php/api/getSmallItems',
+		type	: 'POST',
+		dataType: 'json',
+		data	: {
+			'user_id'	: 1
+		},
+		success	: function(response){
+			/*if(response.success){
+				alert(response.images);
+				var images = '';
+				$.each(response.images, function(){
+					images+='<img src="http://styliteapp.com/uploads/s/250008162cd0e3f77fc98ffc56d21668.jpg" />';
+				});
+			}*/
+			alert('ajax good');
+		},
+		error	: function(response){
+			alert('ajax error');
+		}
 	});
 </script>
 </body>

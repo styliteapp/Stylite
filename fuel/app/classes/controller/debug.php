@@ -19,6 +19,6 @@ class Controller_Debug extends Controller
 
 	public function action_ajax()
 	{
-		return Respone::forge(View::forge('debug/ajax'));
+		return Response::forge(View::forge('debug/ajax'));
 	}
 }
