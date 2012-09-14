@@ -18,14 +18,14 @@
 			'user_id'	: 1
 		},
 		success	: function(response){
-			/*if(response.success){
-				alert(response.images);
-				var images = '';
+			if(response.success){
+				console.log(response.images);
+				/*var images = '';
 				$.each(response.images, function(){
 					images+='<img src="http://styliteapp.com/uploads/s/250008162cd0e3f77fc98ffc56d21668.jpg" />';
-				});
-			}*/
-			alert('ajax good');
+				});*/
+			}
+			//alert('ajax good');
 		},
 		error	: function(response){
 			alert('ajax error');
