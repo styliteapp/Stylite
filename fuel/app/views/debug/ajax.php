@@ -20,7 +20,7 @@
 		success	: function(response){
 			if(response.success){
 				var images = '';
-				response.images.each(function(){
+				$.each(response.images, function(){
 					images+='<img src="'+this+'" />';
 				});
 				/*var images = '';
