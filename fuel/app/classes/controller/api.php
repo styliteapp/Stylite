@@ -115,7 +115,7 @@ class Controller_Api extends Controller_Rest
 				'message'	=> 'bad upload'
 			));
 		}else{
-			Image::load(DOCROOT.'uploads/l/'.$imgName.'.jpg')->resize(200)->save(DOCROOT.'uploads/s/'.$imgName.'.jpg');
+			Image::load(DOCROOT.'uploads/l/'.$imgName.'.jpg')->resize(7.7160494%, 7.7160494%)->save(DOCROOT.'uploads/s/'.$imgName.'.jpg');
 			$dbSave = Model_Upload::add(Input::post('user_id'), $imgName.'.jpg');
 		}
 	
@@ -131,5 +131,23 @@ class Controller_Api extends Controller_Rest
 			'success'	=> true,
 			'message'	=> 'good upload'
 		));
+ 	}
+
+ 	public function post_getSmallItems()
+ 	{
+	 	$smItems = Model_Upload::get_item_filenames(Input::post('user_id'));
+	 	
+	 	if( empty($smItems) )
+	 	{
+	 		$this-response(array(
+			 	'success'	=> false,
+			 	'message'	=> 'there were probs, yo',
+			));
+	 	}else{
+		 	$this-response(array(
+		 		'success'	=> true,
+		 		'images'	=> $smItems
+	 		));
+	 	}
  	}
 }

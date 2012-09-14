@@ -40,4 +40,16 @@ class Model_Upload extends \Orm\Model {
 
 		return 'http://stylietapp.com/uploads/' . $size . '/' . $this->filename;
 	}
+
+	public static function get_item_filenames($userId)
+	{
+		$images = static::find()->where('user_id',$userId)->get();
+		
+		$output = array();
+		foreach($images as $image)
+		{
+			array_push($output, $image->filename);
+		}
+		return $output;
+	}
 }
