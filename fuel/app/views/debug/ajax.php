@@ -19,11 +19,15 @@
 		},
 		success	: function(response){
 			if(response.success){
-				console.log(response.images);
+				var images = '';
+				response.images.each(function(){
+					images+='<img src="'+this+'" />';
+				});
 				/*var images = '';
 				$.each(response.images, function(){
 					images+='<img src="http://styliteapp.com/uploads/s/250008162cd0e3f77fc98ffc56d21668.jpg" />';
 				});*/
+				console.log(images);
 			}
 			//alert('ajax good');
 		},
