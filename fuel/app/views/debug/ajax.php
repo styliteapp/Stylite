@@ -21,7 +21,7 @@
 			if(response.success){
 				var images = '';
 				$.each(response.images, function(){
-					images+='<img src="'+this+'" />';
+					images+='<img src="http://styliteapp.com/uploads/s/'+this+'" />';
 				});
 				/*var images = '';
 				$.each(response.images, function(){
