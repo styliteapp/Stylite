@@ -48,8 +48,10 @@ class Model_Upload extends \Orm\Model {
 		$output = array();
 		foreach($images as $image)
 		{
-			array_push($output, $image->filename);
+			//array_push($output, $image->filename);
+			$small_filename = $image->filename;
+			$image_array[] = array('filename'=>$image->filename);
 		}
-		return $output;
+		return $image_array;
 	}
 }
