@@ -33,11 +33,11 @@
 		}
 	});
 
-	$(window).on('click', 'a', function(){
+	/*$(window).on('click', 'a', function(){
 		//var file = $(this).attr('data-src');
 		alert('hi');
 		return false;
-	});
+	});*/
 </script>
 </body>
 </html>
