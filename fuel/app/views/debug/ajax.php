@@ -21,7 +21,7 @@
 			if(response.success){
 				var images = '';
 				$.each(response.images, function(){
-					images+='<img src="http://styliteapp.com/uploads/s/'+this+'" width="148" height="99" />';
+					images+='<div data-src="'+this+'"><img src="http://styliteapp.com/uploads/s/'+this+'" width="148" height="99" /></div>';
 				});
 				//console.log(images);
 				$('body').html(images);
@@ -33,7 +33,7 @@
 		}
 	});
 
-	$(window).on('click', 'img', function(){
+	$(window).on('click', 'div', function(){
 		//var file = $(this).attr('data-src');
 		alert('hi');
 		//return false;
