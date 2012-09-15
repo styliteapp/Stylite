@@ -33,10 +33,10 @@
 		}
 	});
 
-	$('a').on('click', function(){
+	$('a').on('click', function(e){
 		//var file = $(this).attr('data-src');
 		alert('hi');
-		return false;
+		e.preventDefault();
 	});
 </script>
 </body>
