@@ -8,7 +8,7 @@ class Model_Upload extends \Orm\Model {
 		'id',
 		'user_id',
 		'filename',
-		'orientation',
+		//'orientation',
 		'created_at',
 	);
 
@@ -25,7 +25,7 @@ class Model_Upload extends \Orm\Model {
 		$creation = static::forge(array(
 			'user_id' 	=> $id,
 			'filename'	=> $filename,
-			'orientation' => $size
+			//'orientation' => $size
 		));
 	
 		$creation->save();
