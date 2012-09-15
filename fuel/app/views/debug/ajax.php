@@ -6,13 +6,13 @@
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
 </head>
 <body>
-<p>
-	oh hi.
-</p>
+<div id="images"></div>
+<canvas style="background-color:lightblue;width:800px;height:600px;"></canvas>
 <script>
 	$('body').on('click', 'a', function(){
-		//var file = $(this).attr('data-src');
-		alert('hi');
+		var file = $(this).attr('data-src');
+		//alert('hi');
+		$('canvas').prepend('<img src="http://styliteapp.com/uploads/l/'+file+'" width="400" height="300" />');
 		return false;
 	});
 
@@ -30,7 +30,7 @@
 					images+='<a href="http://google.com" data-src="'+this+'"><img src="http://styliteapp.com/uploads/s/'+this+'" width="148" height="99" /></a>';
 				});
 				//console.log(images);
-				$('body').html(images);
+				$('#images').html(images);
 			}
 			//alert('ajax good');
 		},
