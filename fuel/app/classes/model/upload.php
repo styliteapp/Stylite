@@ -50,7 +50,7 @@ class Model_Upload extends \Orm\Model {
 		$output = array();
 		foreach($images as $image)
 		{
-			array_push($output, array($image->filename));
+			array_push($output, $image->filename);
 		}
 		return $output;
 	}
