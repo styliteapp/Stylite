@@ -10,7 +10,7 @@
 	oh hi.
 </p>
 <script>
-	$(window).on('click', 'a', function(){
+	$('body').on('click', 'a', function(){
 		//var file = $(this).attr('data-src');
 		alert('hi');
 		return false;
