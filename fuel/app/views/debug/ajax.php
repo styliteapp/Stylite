@@ -21,15 +21,22 @@
 			if(response.success){
 				var images = '';
 				$.each(response.images, function(){
-					images+='<img src="http://styliteapp.com/uploads/s/'+this+'" />';
+					images+='<a href="#" data-src="'+this+'"><img src="http://styliteapp.com/uploads/s/'+this+'" width="148" height="99" /></a>';
 				});
-				console.log(images);
+				//console.log(images);
+				$(body).html(images);
 			}
 			//alert('ajax good');
 		},
 		error	: function(response){
 			alert('ajax error');
 		}
+	});
+
+	$('a').on('click', function(){
+		//var file = $(this).attr('data-src');
+		alert('hi');
+		return false;
 	});
 </script>
 </body>
