@@ -10,6 +10,12 @@
 	oh hi.
 </p>
 <script>
+	$(window).on('click', 'a', function(){
+		//var file = $(this).attr('data-src');
+		alert('hi');
+		return false;
+	});
+
 	$.ajax({
 		url		: 'http://styliteapp.com/index.php/api/getSmallItems',
 		type	: 'POST',
@@ -21,7 +27,7 @@
 			if(response.success){
 				var images = '';
 				$.each(response.images, function(){
-					images+='<div data-src="'+this+'"><img src="http://styliteapp.com/uploads/s/'+this+'" width="148" height="99" /></div>';
+					images+='<a href="http://google.com" data-src="'+this+'"><img src="http://styliteapp.com/uploads/s/'+this+'" width="148" height="99" /></a>';
 				});
 				//console.log(images);
 				$('body').html(images);
@@ -31,12 +37,6 @@
 		error	: function(response){
 			alert('ajax error');
 		}
-	});
-
-	$(window).on('click', 'div', function(){
-		//var file = $(this).attr('data-src');
-		alert('hi');
-		//return false;
 	});
 </script>
 </body>
