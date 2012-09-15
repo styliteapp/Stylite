@@ -24,7 +24,7 @@
 					images+='<a href="#" data-src="'+this+'"><img src="http://styliteapp.com/uploads/s/'+this+'" width="148" height="99" /></a>';
 				});
 				//console.log(images);
-				$(body).html(images);
+				$('body').html(images);
 			}
 			//alert('ajax good');
 		},
