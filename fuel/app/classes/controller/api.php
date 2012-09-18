@@ -142,8 +142,11 @@ class Controller_Api extends Controller_Rest
  	{
 		$imgName= md5(rand().time());
 		//$encoded= str_replace(' ', '+', Input::post('base64'));
-		$imgData= base64_decode(Input::post('base64'));
-		$success= file_put_contents(DOCROOT.'uploads/styleboards/l/'.$imgName.'.jpg', $imgData);
+		$imgData= base64_decode(Input::post('base64'), true);
+		$this->response(array(
+			'message'	=> $imgData
+		));
+		/*$success= file_put_contents(DOCROOT.'uploads/styleboards/l/'.$imgName.'.jpg', $imgData);
 	
 		if( !$success ){
 			$this->response(array(
@@ -166,7 +169,7 @@ class Controller_Api extends Controller_Rest
 		$this->response(array(
 			'success'	=> true,
 			'message'	=> 'good upload'
-		));
+		));*/
  	}
 
 /**
