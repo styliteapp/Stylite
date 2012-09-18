@@ -141,21 +141,22 @@ class Controller_Api extends Controller_Rest
  	public function post_styleboardUpload()
  	{
 		$imgName= md5(rand().time());
-		$imgData= base64_decode(Input::post('base64'), true);
-		if( ! $imgData ){
-			$this->response(array(
-				'success'	=> false,
-				'message'	=> $imgData
-			));
-		}else{
-			$this->response(array(
-				'success'	=> false,
-				'message'	=> 'good base64'
-			));
-		}
-		/*$encoded= str_replace(' ', '+', Input::post('base64'));
+		$encoded= str_replace(' ', '+', Input::post('base64'));
 		$imgData= base64_decode($encoded, true);
-		$success= file_put_contents(DOCROOT.'uploads/styleboards/l/'.$imgName, $imgData);
+
+		$myFile = DOCROOT."uploads/test.txt";
+		$fh = fopen($myFile, 'w') or die("can't open file");
+		$stringData = Input::post('base64').'\n\n\n';
+		fwrite($fh, $stringData);
+		$stringData = $encoded;
+		fwrite($fh, $stringData);
+		fclose($fh);
+
+		$this->response(array(
+			'success'	=> false,
+			'message'	=> 'finished'
+		));
+		/*$success= file_put_contents(DOCROOT.'uploads/styleboards/l/'.$imgName, $imgData);
 	
 		if( !$success ){
 			$this->response(array(
