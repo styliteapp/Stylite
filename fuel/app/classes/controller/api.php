@@ -142,7 +142,7 @@ class Controller_Api extends Controller_Rest
  	{
 		$imgName= md5(rand().time());
 		$imgData= base64_decode(Input::post('base64'));
-		$success= file_put_contents(DOCROOT.'uploads/styleboards/l/'.$imgName.'.jpg', $imgData);
+		$success= file_put_contents(DOCROOT.'uploads/styleboards/l/'.$imgName.'.png', $imgData);
 	
 		if( !$success ){
 			$this->response(array(
@@ -150,8 +150,8 @@ class Controller_Api extends Controller_Rest
 				'message'	=> 'bad upload'
 			));
 		}else{
-			Image::load(DOCROOT.'uploads/styleboards/l/'.$imgName.'.jpg')->resize('400', '400')->save(DOCROOT.'uploads/styleboards/s/'.$imgName.'.jpg');
-			$dbSave = Model_Uploadstyleboards::add(Input::post('user_id'), $imgName.'.jpg');
+			Image::load(DOCROOT.'uploads/styleboards/l/'.$imgName.'.png')->resize('400', '400')->save(DOCROOT.'uploads/styleboards/s/'.$imgName.'.png');
+			$dbSave = Model_Uploadstyleboards::add(Input::post('user_id'), $imgName.'.png');
 		}
 	
 		if( ! $dbSave )
