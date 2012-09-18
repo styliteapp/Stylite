@@ -175,7 +175,7 @@ class Controller_Api extends Controller_Rest
  */
  	public function post_getSmallItems()
  	{
-	 	$smItems = Model_Upload::get_item_filenames(Input::post('user_id'));
+	 	$smItems = Model_Upload_items::get_item_filenames(Input::post('user_id'));
 	 	
 	 	if( empty($smItems) )
 	 	{
