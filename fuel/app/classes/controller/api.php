@@ -141,22 +141,11 @@ class Controller_Api extends Controller_Rest
  	public function post_styleboardUpload()
  	{
 		$imgName= md5(rand().time());
-		$encoded= str_replace(' ', '+', Input::post('base64'));
-		$imgData= base64_decode($encoded, true);
-
-		$myFile = DOCROOT."uploads/test.txt";
-		$fh = fopen($myFile, 'w') or die("can't open file");
-		$stringData = Input::post('base64').'\n\n\n';
-		fwrite($fh, $stringData);
-		$stringData = $encoded;
-		fwrite($fh, $stringData);
-		fclose($fh);
-
-		$this->response(array(
-			'success'	=> false,
-			'message'	=> 'finished'
-		));
-		/*$success= file_put_contents(DOCROOT.'uploads/styleboards/l/'.$imgName, $imgData);
+		$base64 = Input::post('base64');
+		$base64 = str_replace('data:image/png;base64,', '', $base64);
+		$base64 = str_replace(' ', '+', $base64);
+		$imgData = base64_decode($encoded, true);
+		$success = file_put_contents(DOCROOT.'uploads/styleboards/l/'.$imgName.'.png', $imgData);
 	
 		if( !$success ){
 			$this->response(array(
@@ -164,8 +153,8 @@ class Controller_Api extends Controller_Rest
 				'message'	=> 'bad upload'
 			));
 		}else{
-			Image::load(DOCROOT.'uploads/styleboards/l/'.$imgName)->resize('400', '400')->save(DOCROOT.'uploads/styleboards/s/'.$imgName);
-			$dbSave = Model_Uploadstyleboards::add(Input::post('user_id'), $imgName);
+			Image::load(DOCROOT.'uploads/styleboards/l/'.$imgName.'.png')->resize('400', '400')->save(DOCROOT.'uploads/styleboards/s/'.$imgName.'.png');
+			$dbSave = Model_Uploadstyleboards::add(Input::post('user_id'), $imgName.'.png');
 
 			if( ! $dbSave )
 			{
@@ -179,7 +168,7 @@ class Controller_Api extends Controller_Rest
 					'message'	=> 'good upload'
 				));
 			}
-		}*/
+		}
  	}
 
 /**
