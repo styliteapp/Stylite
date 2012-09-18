@@ -1,6 +1,6 @@
 <?php
 
-class Model_Upload_items extends \Orm\Model {
+class Model_Upload_Items extends \Orm\Model {
 
 	public static $_table_name = 'items';
 
