@@ -143,7 +143,7 @@ class Controller_Api extends Controller_Rest
 		$imgName= md5(rand().time());
 		$encoded= str_replace(' ', '+', Input::post('base64'));
 		$imgData= base64_decode($encoded, true);
-		$success= file_put_contents(DOCROOT.'uploads/styleboards/l/'.$imgName.'.png', $imgData);
+		$success= file_put_contents(DOCROOT.'uploads/styleboards/l/'.$imgName, $imgData);
 	
 		if( !$success ){
 			$this->response(array(
@@ -151,22 +151,22 @@ class Controller_Api extends Controller_Rest
 				'message'	=> 'bad upload'
 			));
 		}else{
-			Image::load(DOCROOT.'uploads/styleboards/l/'.$imgName.'.png')->resize('400', '400')->save(DOCROOT.'uploads/styleboards/s/'.$imgName.'.png');
-			$dbSave = Model_Uploadstyleboards::add(Input::post('user_id'), $imgName.'.png');
+			Image::load(DOCROOT.'uploads/styleboards/l/'.$imgName)->resize('400', '400')->save(DOCROOT.'uploads/styleboards/s/'.$imgName);
+			$dbSave = Model_Uploadstyleboards::add(Input::post('user_id'), $imgName);
+
+			if( ! $dbSave )
+			{
+				$this->response(array(
+					'success'	=> false,
+					'message'	=> 'bad upload'
+				));
+			}else{
+				$this->response(array(
+					'success'	=> true,
+					'message'	=> 'good upload'
+				));
+			}
 		}
-	
-		if( ! $dbSave )
-		{
-			$this->response(array(
-				'success'	=> false,
-				'message'	=> 'bad upload'
-			));
-		}
-	
-		$this->response(array(
-			'success'	=> true,
-			'message'	=> 'good upload'
-		));
  	}
 
 /**
