@@ -116,7 +116,7 @@ class Controller_Api extends Controller_Rest
 			));
 		}else{
 			Image::load(DOCROOT.'uploads/items/l/'.$imgName.'.jpg')->resize('7.7160494%', '7.7160494%')->save(DOCROOT.'uploads/items/s/'.$imgName.'.jpg');
-			$dbSave = Model_UploadItems::add(Input::post('user_id'), $imgName.'.jpg');
+			$dbSave = Model_Uploaditems::add(Input::post('user_id'), $imgName.'.jpg');
 		}
 	
 		if( ! $dbSave )
@@ -151,7 +151,7 @@ class Controller_Api extends Controller_Rest
 			));
 		}else{
 			Image::load(DOCROOT.'uploads/styleboards/l/'.$imgName.'.jpg')->resize('400', '400')->save(DOCROOT.'uploads/styleboards/s/'.$imgName.'.jpg');
-			$dbSave = Model_Upload_styleboards::add(Input::post('user_id'), $imgName.'.jpg');
+			$dbSave = Model_Uploadstyleboards::add(Input::post('user_id'), $imgName.'.jpg');
 		}
 	
 		if( ! $dbSave )

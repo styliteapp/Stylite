@@ -1,13 +1,13 @@
 <?php
 
-class Model_Uploaditems extends \Orm\Model {
+class Model_Uploadstyleboards extends \Orm\Model {
 
-	public static $_table_name = 'items';
+	public static $_table_name = 'styleboards';
 
-	protected static $_primary_key = array('item_id');
+	protected static $_primary_key = array('styleboard_id');
 
 	public static $_properties = array(
-		'item_id',
+		'styleboard_id',
 		'user_id',
 		'filename',
 		'created_at',
@@ -33,24 +33,24 @@ class Model_Uploaditems extends \Orm\Model {
 		return $creation;
 	}
 
-	public function get_item($size)
+	public function get_styleboard($size)
 	{
 		if (!in_array($size, array('s', 'l')))
 		{
 			throw new Exception("Invalid image size {$size}");	
 		}
 
-		return 'http://stylietapp.com/uploads/items/' . $size . '/' . $this->filename;
+		return 'http://stylietapp.com/uploads/styleboards/' . $size . '/' . $this->filename;
 	}
 
-	public static function get_item_filenames($userId)
+	public static function get_styleboard_filenames($userId)
 	{
-		$items = static::find()->where('user_id',$userId)->get();
+		$styleboards = static::find()->where('user_id',$userId)->get();
 		
 		$output = array();
-		foreach($items as $item)
+		foreach($styleboards as $styleboard)
 		{
-			array_push($output, $item->filename);
+			array_push($output, $styleboard->filename);
 		}
 		return $output;
 	}
