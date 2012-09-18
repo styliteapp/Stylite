@@ -141,7 +141,8 @@ class Controller_Api extends Controller_Rest
  	public function post_styleboardUpload()
  	{
 		$imgName= md5(rand().time());
-		$imgData= base64_decode(Input::post('base64'));
+		$encodedData= str_replace(' ','+',Input::post('base64'));
+		$imgData= base64_decode($encodedData);
 		$success= file_put_contents(DOCROOT.'uploads/styleboards/l/'.$imgName.'.png', $imgData);
 	
 		if( !$success ){
