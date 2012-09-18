@@ -100,14 +100,14 @@ class Controller_Api extends Controller_Rest
 
 /**
  *
- * UPLOAD new closet item image
+ * UPLOAD new item image from closet
  *
  */
  	public function post_imageUpload()
  	{
 		$imgName= md5(rand().time());
 		$imgData= base64_decode(Input::post('base64'));
-		$success= file_put_contents(DOCROOT.'uploads/l/'.$imgName.'.jpg', $imgData);
+		$success= file_put_contents(DOCROOT.'uploads/items/l/'.$imgName.'.jpg', $imgData);
 	
 		if( !$success ){
 			$this->response(array(
@@ -115,10 +115,8 @@ class Controller_Api extends Controller_Rest
 				'message'	=> 'bad upload'
 			));
 		}else{
-			Image::load(DOCROOT.'uploads/l/'.$imgName.'.jpg')->resize('7.7160494%', '7.7160494%')->save(DOCROOT.'uploads/s/'.$imgName.'.jpg');
-			//$imgSizes = Image::sizes(DOCROOT.'uploads/s/'.$imgName.'.jpg');
-			//$imgSize = $imgSizes->width > $imgSizes->height ? 'landscape' : 'portrait';
-			$dbSave = Model_Upload::add(Input::post('user_id'), $imgName.'.jpg', $imgSize);
+			Image::load(DOCROOT.'uploads/items/l/'.$imgName.'.jpg')->resize('7.7160494%', '7.7160494%')->save(DOCROOT.'uploads/items/s/'.$imgName.'.jpg');
+			$dbSave = Model_Upload_items::add(Input::post('user_id'), $imgName.'.jpg');
 		}
 	
 		if( ! $dbSave )
@@ -135,6 +133,46 @@ class Controller_Api extends Controller_Rest
 		));
  	}
 
+/**
+ *
+ * UPLOAD new styleboard from create screen
+ *
+ */
+ 	public function post_styleboardUpload()
+ 	{
+		$imgName= md5(rand().time());
+		$imgData= base64_decode(Input::post('base64'));
+		$success= file_put_contents(DOCROOT.'uploads/styleboards/l/'.$imgName.'.jpg', $imgData);
+	
+		if( !$success ){
+			$this->response(array(
+				'success'	=> false,
+				'message'	=> 'bad upload'
+			));
+		}else{
+			Image::load(DOCROOT.'uploads/styleboards/l/'.$imgName.'.jpg')->resize('400', '400')->save(DOCROOT.'uploads/styleboards/s/'.$imgName.'.jpg');
+			$dbSave = Model_Upload_styleboards::add(Input::post('user_id'), $imgName.'.jpg');
+		}
+	
+		if( ! $dbSave )
+		{
+			$this->response(array(
+				'success'	=> false,
+				'message'	=> 'bad upload'
+			));
+		}
+	
+		$this->response(array(
+			'success'	=> true,
+			'message'	=> 'good upload'
+		));
+ 	}
+
+/**
+ *
+ * RETRIEVE user's closet items for create screen
+ *
+ */
  	public function post_getSmallItems()
  	{
 	 	$smItems = Model_Upload::get_item_filenames(Input::post('user_id'));
