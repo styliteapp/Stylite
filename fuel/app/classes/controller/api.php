@@ -144,7 +144,7 @@ class Controller_Api extends Controller_Rest
 		$base64 = Input::post('base64');
 		$base64 = str_replace('data:image/png;base64,', '', $base64);
 		$base64 = str_replace(' ', '+', $base64);
-		$imgData = base64_decode($encoded, true);
+		$imgData = base64_decode($base64);
 		$success = file_put_contents(DOCROOT.'uploads/styleboards/l/'.$imgName.'.png', $imgData);
 	
 		if( !$success ){
