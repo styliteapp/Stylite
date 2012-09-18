@@ -4,6 +4,8 @@ class Model_UploadItems extends \Orm\Model {
 
 	public static $_table_name = 'items';
 
+	protected static $_primary_key = array('item_id');
+
 	public static $_properties = array(
 		'item_id',
 		'user_id',
