@@ -47,12 +47,12 @@ class Model_Uploadstyleboards extends \Orm\Model {
 
 	public static function get_styleboard_filenames($userId)
 	{
-		$styleboards = static::find()->get();
+		$styleboards = static::find()->where('user_id',$userId)->get();
 		
 		$output = array();
 		foreach($styleboards as $styleboard)
 		{
-			array_push($output, array('filename'=>$styleboard->filename,'title'=>$styleboard->title));
+			array_push($output, $styleboard->filename);
 		}
 		return $output;
 	}

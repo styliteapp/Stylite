@@ -154,7 +154,7 @@ class Controller_Api extends Controller_Rest
 			));
 		}else{
 			Image::load(DOCROOT.'uploads/styleboards/l/'.$imgName.'.png')->resize('400', '400')->save(DOCROOT.'uploads/styleboards/s/'.$imgName.'.png');
-			$dbSave = Model_Uploadstyleboards::add(Input::post('user_id'), $imgName.'.png');
+			$dbSave = Model_Uploadstyleboards::add(Input::post('title'), Input::post('user_id'), $imgName.'.png');
 
 			if( ! $dbSave )
 			{
@@ -190,6 +190,29 @@ class Controller_Api extends Controller_Rest
 		 	$this->response(array(
 		 		'success'	=> true,
 		 		'images'	=> $smItems
+	 		));
+	 	}
+ 	}
+
+/**
+ *
+ * RETRIEVE styleboards for feed (home) screen
+ *
+ */
+ 	public function post_getSmallStyleboards()
+ 	{
+	 	$smItems = Model_Uploadstyleboards::get_styleboard_filenames();
+	 	
+	 	if( empty($smItems) )
+	 	{
+	 		$this->response(array(
+			 	'success'	=> false,
+			 	'message'	=> 'there were probs, yo',
+			));
+	 	}else{
+		 	$this->response(array(
+		 		'success'	=> true,
+		 		'styleboards'=> $smItems
 	 		));
 	 	}
  	}
