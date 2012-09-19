@@ -45,7 +45,7 @@ class Model_Uploadstyleboards extends \Orm\Model {
 		return 'http://stylietapp.com/uploads/styleboards/' . $size . '/' . $this->filename;
 	}
 
-	public static function get_styleboard_filenames($userId)
+	public static function get_styleboard_filenames()
 	{
 		$styleboards = static::find()->get();
 		
